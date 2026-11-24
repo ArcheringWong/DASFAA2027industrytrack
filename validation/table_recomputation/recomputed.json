@@ -1,0 +1,163 @@
+{
+  "archive_hashes_checked": 136,
+  "table2": [
+    {
+      "version": "1.31.0",
+      "TRUE_VIOLATION": 1,
+      "PASS": 3,
+      "INCONCLUSIVE": 1,
+      "INVALID_TRANSFORMATION": 4,
+      "total": 9
+    },
+    {
+      "version": "1.32.0",
+      "TRUE_VIOLATION": 1,
+      "PASS": 10,
+      "INCONCLUSIVE": 0,
+      "INVALID_TRANSFORMATION": 8,
+      "total": 19
+    }
+  ],
+  "table3": [
+    {
+      "snapshot": "base",
+      "added_cases": 0,
+      "A": 17,
+      "B": 17,
+      "C": 34
+    },
+    {
+      "snapshot": "T1",
+      "added_cases": 3,
+      "A": 25,
+      "B": 25,
+      "C": 50
+    },
+    {
+      "snapshot": "T2",
+      "added_cases": 3,
+      "A": 19,
+      "B": 19,
+      "C": 38
+    },
+    {
+      "snapshot": "T3",
+      "added_cases": 2,
+      "A": 18,
+      "B": 18,
+      "C": 36
+    }
+  ],
+  "d3_pipeline_calls": 52,
+  "d4_recorded_exploration": [
+    {
+      "snapshot": "base",
+      "version": "1.31.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 20,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "base",
+      "version": "1.32.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 20,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T1",
+      "version": "1.31.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 20,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T1",
+      "version": "1.32.0",
+      "recorded_histories": 7,
+      "recorded_pipeline_calls": 14,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T2",
+      "version": "1.31.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 20,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T2",
+      "version": "1.32.0",
+      "recorded_histories": 7,
+      "recorded_pipeline_calls": 10,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T3",
+      "version": "1.31.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 20,
+      "scope": "final_saved_snapshot_only"
+    },
+    {
+      "snapshot": "T3",
+      "version": "1.32.0",
+      "recorded_histories": 10,
+      "recorded_pipeline_calls": 17,
+      "scope": "final_saved_snapshot_only"
+    }
+  ],
+  "d4_exploration_layout_findings": [
+    {
+      "snapshot": "base",
+      "version": "1.32.0",
+      "exploration_index": 0,
+      "name": "confirmed_boundary_prefix",
+      "requested_batches": [
+        1,
+        2
+      ],
+      "saved_current_batch_count": 1,
+      "finding": "Generated batch list retained by reference and later coalesced before serialization."
+    },
+    {
+      "snapshot": "T1",
+      "version": "1.32.0",
+      "exploration_index": 0,
+      "name": "boundary_three_split",
+      "requested_batches": [
+        1,
+        2
+      ],
+      "saved_current_batch_count": 1,
+      "finding": "Generated batch list retained by reference and later coalesced before serialization."
+    },
+    {
+      "snapshot": "T2",
+      "version": "1.32.0",
+      "exploration_index": 1,
+      "name": "arrow_split_with_null",
+      "requested_batches": [
+        1,
+        2
+      ],
+      "saved_current_batch_count": 1,
+      "finding": "Generated batch list retained by reference and later coalesced before serialization."
+    }
+  ],
+  "checks": {
+    "status_rederived_from_targets_and_validity_evidence": true,
+    "independent_integer_open_end_obligation": true,
+    "fixed_calls_rederived_from_current_and_prior_run_traces": true,
+    "all_three_final_scheme_outcomes_agree": true,
+    "no_summary_json_used_for_counts": true
+  },
+  "limitations": [
+    "Invalid classifications use saved validity findings and zero-execution evidence.",
+    "A/B invalid and baseline-incomplete flags are prepared labels; construction is not independent of C.",
+    "Final successful snapshots overwrite some development attempts. Recorded exploration totals exclude unretained attempts.",
+    "At least three generated traces visibly retain a batch-list reference subsequently coalesced in place. Their original page layout cannot be fully reconstructed; further mutations need not produce a visible request/count contradiction. Fixed records pass layout checks.",
+    "The archive contains historical inclusive-end code. Independent recomputation uses corrected eligibility; repaired execution code is under code/.",
+    "This program verifies saved execution traces and does not rerun D3 or D4."
+  ]
+}

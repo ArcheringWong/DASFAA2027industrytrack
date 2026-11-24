@@ -1,0 +1,104 @@
+[
+  {
+    "snapshot": "T1",
+    "scheme": "a",
+    "version": "1.31.0",
+    "exit_code": 0,
+    "wall_seconds": 6.937528,
+    "case_file": "snapshots\\T1\\a_cases.json",
+    "result_file": "evidence\\T1\\a_1.31.0.json",
+    "log_file": "evidence\\T1\\a_1.31.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_131\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "test_a.py",
+      "-q",
+      "--disable-warnings"
+    ]
+  },
+  {
+    "snapshot": "T1",
+    "scheme": "c",
+    "version": "1.31.0",
+    "exit_code": 0,
+    "wall_seconds": 11.492735,
+    "case_file": "snapshots\\T1\\c_cases.json",
+    "result_file": "evidence\\T1\\c_1.31.0.json",
+    "log_file": "evidence\\T1\\c_1.31.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_131\\Scripts\\python.exe",
+      "run_c.py",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\c_cases.json",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\c_1.31.0.json"
+    ]
+  },
+  {
+    "snapshot": "T1",
+    "scheme": "a",
+    "version": "1.32.0",
+    "exit_code": 0,
+    "wall_seconds": 8.1534,
+    "case_file": "snapshots\\T1\\a_cases.json",
+    "result_file": "evidence\\T1\\a_1.32.0.json",
+    "log_file": "evidence\\T1\\a_1.32.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_132\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "test_a.py",
+      "-q",
+      "--disable-warnings"
+    ]
+  },
+  {
+    "snapshot": "T1",
+    "scheme": "c",
+    "version": "1.32.0",
+    "exit_code": 0,
+    "wall_seconds": 13.591649,
+    "case_file": "snapshots\\T1\\c_cases.json",
+    "result_file": "evidence\\T1\\c_1.32.0.json",
+    "log_file": "evidence\\T1\\c_1.32.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_132\\Scripts\\python.exe",
+      "run_c.py",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\c_cases.json",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\c_1.32.0.json"
+    ]
+  },
+  {
+    "snapshot": "T1",
+    "scheme": "b",
+    "version": "1.31.0",
+    "exit_code": 0,
+    "wall_seconds": 14.439092,
+    "case_file": "snapshots\\T1\\b_cases.json",
+    "result_file": "evidence\\T1\\b_1.31.0.json",
+    "log_file": "evidence\\T1\\b_1.31.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_131\\Scripts\\python.exe",
+      "stateful_b.py",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json",
+      "--explore"
+    ]
+  },
+  {
+    "snapshot": "T1",
+    "scheme": "b",
+    "version": "1.32.0",
+    "exit_code": 0,
+    "wall_seconds": 13.825398,
+    "case_file": "snapshots\\T1\\b_cases.json",
+    "result_file": "evidence\\T1\\b_1.32.0.json",
+    "log_file": "evidence\\T1\\b_1.32.0.log",
+    "command": [
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.venv_132\\Scripts\\python.exe",
+      "stateful_b.py",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json",
+      "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.32.0.json",
+      "--explore"
+    ]
+  }
+]

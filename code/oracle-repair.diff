@@ -1,0 +1,172 @@
+--- D_checkpoint_safety/D2_cross_mechanism/d2_tool.py
++++ DASFAA2027_Industry_Revision/oracle_repair/d2_tool.py
+@@ -11,6 +11,8 @@
+ from dataclasses import asdict, dataclass
+ from pathlib import Path
+ from typing import Any
++
++from cursor_contract import eligible, end_mode
+ 
+ ROOT = Path(__file__).resolve().parent
+ E = ROOT / "evidence"
+@@ -91,6 +93,7 @@
+ def source_oracle(ops: list[Operation]) -> dict[str, Any]:
+     batches: list[list[Row]] = []
+     fmt, order, end = "dict", None, None
++    range_end = "open"
+     for op in ops:
+         if op.kind == "set_format":
+             fmt = op.value
+@@ -98,6 +101,8 @@
+             order = op.value
+         elif op.kind == "set_end_value":
+             end = op.value
++        elif op.kind == "set_range_end":
++            range_end = end_mode(op.value)
+         elif op.kind == "append_batch":
+             batches.append(list(op.rows))
+         elif op.kind != "run_incremental_sync":
+@@ -106,13 +111,11 @@
+         raise ValueError("scenario must end in sync")
+     if fmt not in ("dict", "arrow") or order not in (None, "asc"):
+         raise ValueError("invalid mode")
+-    ids = [r.id for batch in batches for r in batch
+-           if r.cursor is not None and r.cursor >= 0
+-           and (end is None or r.cursor <= end)]
++    ids = [r.id for batch in batches for r in batch if eligible(r.cursor, 0, end, range_end)]
+     if len(ids) != len(set(ids)):
+         raise ValueError("duplicate valid ID")
+     return {"batches": batches, "format": fmt, "row_order": order,
+-            "end_value": end, "expected_ids": sorted(ids),
++            "end_value": end, "range_end": range_end, "expected_ids": sorted(ids),
+             "all_committed_ids": [r.id for b in batches for r in b]}
+ 
+ 
+@@ -126,6 +129,7 @@
+         @dlt.resource(name="events", primary_key="id")
+         def events(ts=dlt.sources.incremental("ts", initial_value=0, end_value=end,
+                                               row_order=order,
++                                              range_end=spec.get("range_end", "open"),
+                                               on_cursor_value_missing="exclude")):
+             for index, batch in enumerate(spec["batches"], 1):
+                 requested.append(index)
+@@ -171,7 +175,7 @@
+             "python": sys.version, "ops": render_ops(ops),
+             "batches": [[asdict(r) for r in b] for b in spec["batches"]],
+             "format": spec["format"], "row_order": spec["row_order"],
+-            "end_value": spec["end_value"], "expected_ids": spec["expected_ids"],
++            "end_value": spec["end_value"], "range_end": spec["range_end"], "expected_ids": spec["expected_ids"],
+             **actual, "missing_ids": missing,
+             "failure_type": ("connector_error" if actual["connector_error"] else
+                              "record_omission" if missing else None),
+--- D_checkpoint_safety/D3_termination_testing/metamorphic.py
++++ DASFAA2027_Industry_Revision/oracle_repair/metamorphic.py
+@@ -8,6 +8,8 @@
+ import uuid
+ from pathlib import Path
+ from typing import Any
++
++from cursor_contract import eligible, end_mode
+ 
+ ROOT = Path(__file__).resolve().parent
+ E = ROOT / "evidence"
+@@ -35,13 +37,15 @@
+ def expected_ids(case: dict[str, Any], current: list[list[dict[str, Any]]]) -> dict[str, Any]:
+     prior = flatten(case.get("prior_batches", []))
+     end = case.get("end_value")
++    mode = end_mode(case.get("range_end", "open"))
++    policy = case.get("missing_policy", "exclude")
+     prior_good = {row["id"]: row["ts"] for row in prior
+-                  if row["ts"] is not None and row["ts"] >= 0
+-                  and (end is None or row["ts"] <= end)}
+-    checkpoint = max(prior_good.values(), default=0)
++                  if eligible(row["ts"], 0, end, mode, policy)}
++    # A bounded dlt read always takes its starting value from the configured interval.
++    checkpoint = 0 if end is not None else max((value for value in prior_good.values() if value is not None),
++                                               default=0)
+     current_good = {row["id"] for row in flatten(current)
+-                    if row["ts"] is not None and row["ts"] >= checkpoint
+-                    and (end is None or row["ts"] <= end)}
++                    if eligible(row["ts"], checkpoint, end, mode, policy)}
+     return {"prior_ids": sorted(prior_good), "new_ids": sorted(current_good - set(prior_good)),
+             "final_ids": sorted(set(prior_good) | current_good),
+             "model_checkpoint": checkpoint}
+@@ -58,7 +62,9 @@
+         raise ValueError("prefix count must be positive")
+     if recipe.get("kind") == "confirmed_boundary":
+         prior = flatten(case.get("prior_batches", []))
+-        values = [r["ts"] for r in prior if r["ts"] is not None]
++        if case.get("end_value") is not None:
++            raise ValueError("bounded reads do not have a persisted cursor checkpoint")
++        values = [r["ts"] for r in prior if eligible(r["ts"], 0, None, "open")]
+         if not values:
+             raise ValueError("no prior boundary to replay")
+         boundary = max(values)
+@@ -83,6 +89,7 @@
+ def validate(case: dict[str, Any]) -> dict[str, Any]:
+     base = case.get("base_batches", [])
+     try:
++        mode = end_mode(case.get("range_end", "open"))
+         prefix = derive_prefix(case)
+         variant = transformed_batches(case, prefix)
+     except (KeyError, TypeError, ValueError) as exc:
+@@ -99,7 +106,8 @@
+         reasons.append("this relation requires closed start for confirmed boundary")
+     if case.get("write_disposition", "append") not in ("append", "merge"):
+         reasons.append("unsupported target write disposition")
+-    if case.get("transformed_end_value", case.get("end_value")) != case.get("end_value"):
++    if (case.get("transformed_end_value", case.get("end_value")) != case.get("end_value")
++            or case.get("transformed_range_end", mode) != mode):
+         reasons.append("read bounds changed")
+     if case.get("transformed_write_disposition", case.get("write_disposition", "append")) != case.get("write_disposition", "append"):
+         reasons.append("target write semantics changed")
+@@ -120,12 +128,11 @@
+     base_ids = {r["id"] for r in flatten(base)}
+     end = case.get("end_value")
+     prior_good = {r["id"] for r in prior.values()
+-                  if r["ts"] is not None and r["ts"] >= 0
+-                  and (end is None or r["ts"] <= end)}
++                  if eligible(r["ts"], 0, end, mode)}
+     prior_checkpoint = max((prior[i]["ts"] for i in prior_good), default=0)
+     for row in flatten(prefix):
+         excluded_null = row["ts"] is None and policy == "exclude" and row["id"] not in base_ids
+-        confirmed_boundary = (row["id"] in prior_good and row == prior[row["id"]]
++        confirmed_boundary = (end is None and row["id"] in prior_good and row == prior[row["id"]]
+                               and row["ts"] == prior_checkpoint
+                               and case.get("range_start", "closed") == "closed")
+         if not (excluded_null or confirmed_boundary):
+@@ -148,6 +155,7 @@
+     requested: list[int] = []
+     prior_requested: list[int] = []
+     fmt, order, end = case["format"], case.get("row_order"), case.get("end_value")
++    mode = end_mode(case.get("range_end", "open"))
+     policy = case["missing_policy"]
+     con = duckdb.connect(":memory:")
+     name = "d3_" + uuid.uuid4().hex[:12]
+@@ -157,7 +165,7 @@
+     @dlt.resource(name="events", primary_key="id", write_disposition=case.get("write_disposition", "append"))
+     def events(source_batches, ts=dlt.sources.incremental(
+             "ts", initial_value=0, end_value=end, row_order=order,
+-            range_start="closed", on_cursor_value_missing=policy)):
++            range_start="closed", range_end=mode, on_cursor_value_missing=policy)):
+         for index, batch in enumerate(source_batches, 1):
+             requested.append(index)
+             if fmt == "arrow":
+--- /dev/null
++++ DASFAA2027_Industry_Revision/oracle_repair/cursor_contract.py
+@@ -0,0 +1,15 @@
++"""Source-side eligibility for the integer max-cursor fixtures."""
++
++
++def end_mode(mode):
++    if mode not in ("open", "closed"):
++        raise ValueError(f"invalid range_end: {mode!r}")
++    return mode
++
++
++def eligible(cursor, start, end, mode, missing_policy="exclude"):
++    if cursor is None:
++        return missing_policy == "include"
++    return cursor >= start and (
++        end is None or cursor < end or (mode == "closed" and cursor == end)
++    )

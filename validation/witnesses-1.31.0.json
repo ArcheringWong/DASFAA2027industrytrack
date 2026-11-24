@@ -1,0 +1,187 @@
+{
+  "validation_kind": "submission_preparation_deterministic_replay",
+  "observed_at_utc": "2026-11-21T07:19:28.760406+00:00",
+  "environment": {
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "dlt": "1.31.0",
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0"
+  },
+  "elapsed_seconds": 19.093999999997322,
+  "records": [
+    {
+      "witness": "A",
+      "source_rounds": [
+        [
+          [
+            {
+              "id": 1,
+              "ts": 2
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "id": 1,
+              "ts": 2
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 2
+            }
+          ]
+        ]
+      ],
+      "cursor_field": "ts",
+      "row_order": "desc",
+      "range_start": "closed",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "error": null,
+      "rounds": [
+        {
+          "requested_pages": [
+            1
+          ],
+          "target_rows": [
+            [
+              1,
+              2
+            ]
+          ],
+          "target_ids": [
+            1
+          ],
+          "state": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:19:27.611346+00:00",
+              "_last_extracted_hash": "PTDG0M2sblpSl7/ByhxvyvktvfR+z7rSDLUKQHGL57c="
+            },
+            "pipeline_name": "witness_dictionary",
+            "schema_names": [
+              "witness_dictionary"
+            ],
+            "dataset_name": "witness_dictionary_dataset",
+            "default_schema_name": "witness_dictionary",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "PTDG0M2sblpSl7/ByhxvyvktvfR+z7rSDLUKQHGL57c=",
+            "sources": {
+              "witness_dictionary": {
+                "resources": {
+                  "events": {
+                    "incremental": {
+                      "ts": {
+                        "initial_value": 0,
+                        "last_value": 2,
+                        "unique_hashes": [
+                          "669czW83KR00"
+                        ],
+                        "start_value": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "has_failed_jobs": false
+        },
+        {
+          "requested_pages": [
+            1
+          ],
+          "target_rows": [
+            [
+              1,
+              2
+            ]
+          ],
+          "target_ids": [
+            1
+          ],
+          "state": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:19:27.611346+00:00",
+              "_last_extracted_hash": "PTDG0M2sblpSl7/ByhxvyvktvfR+z7rSDLUKQHGL57c="
+            },
+            "pipeline_name": "witness_dictionary",
+            "schema_names": [
+              "witness_dictionary"
+            ],
+            "dataset_name": "witness_dictionary_dataset",
+            "default_schema_name": "witness_dictionary",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "PTDG0M2sblpSl7/ByhxvyvktvfR+z7rSDLUKQHGL57c=",
+            "sources": {
+              "witness_dictionary": {
+                "resources": {
+                  "events": {
+                    "incremental": {
+                      "ts": {
+                        "initial_value": 0,
+                        "last_value": 2,
+                        "unique_hashes": [
+                          "669czW83KR00"
+                        ],
+                        "start_value": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "has_failed_jobs": false
+        }
+      ],
+      "missing_ids": [
+        2
+      ],
+      "acceptance": {
+        "target_ids": [
+          1
+        ],
+        "requested_pages": [
+          1
+        ],
+        "prior_target_ids": [
+          1
+        ],
+        "prior_requested_pages": [
+          1
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

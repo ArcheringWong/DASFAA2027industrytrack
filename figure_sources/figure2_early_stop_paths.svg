@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="282" viewBox="0 0 460 282"><defs><marker id="arrow" markerWidth="6" markerHeight="5" refX="5.5" refY="2.5" orient="auto"><path d="M0 0 L6 2.5 L0 5 Z" fill="#40586a"/></marker></defs>
+<rect width="460" height="282" fill="#ffffff"/>
+<rect x="2" y="2" width="226" height="278" rx="5" fill="#fafbfd" stroke="#a3b1ba" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="A  Dictionary · closed start"><tspan x="13" y="17.00">A Dictionary · closed start</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="dlt 1.31.0 · descending"><tspan x="13" y="30.00">dlt 1.31.0 · descending</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Prior confirmed (id=1, c=2)"><tspan x="13" y="42.00">Prior confirmed (id=1, c=2)</tspan></text>
+<rect x="8" y="48" width="214" height="42" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="1  Valid local filtering"><tspan x="13" y="61.00">1 Valid local filtering</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Page 1 · (id=1, c=2) deduplicated"><tspan x="13" y="75.00">Page 1 · (id=1, c=2) deduplicated</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="No new row emitted"><tspan x="13" y="86.00">No new row emitted</tspan></text>
+<path d="M115 91 L115 98" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="8" y="99" width="214" height="42" rx="5" fill="#fff3f1" stroke="#a84333" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="2  Incorrect source stop"><tspan x="13" y="112.00">2 Incorrect source stop</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="start_out_of_range = True"><tspan x="13" y="126.00">start_out_of_range = True</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Read closes"><tspan x="13" y="137.00">Read closes</tspan></text>
+<path d="M115 142 L115 149" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="8" y="150" width="214" height="42" rx="5" fill="#ffffff" stroke="#a84333" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="3  Eligible unread suffix"><tspan x="13" y="163.00">3 Eligible unread suffix</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Page 2 · new (id=2, c=2)"><tspan x="13" y="177.00">Page 2 · new (id=2, c=2)</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Never requested"><tspan x="13" y="188.00">Never requested</tspan></text>
+<path d="M115 193 L115 200" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="8" y="201" width="214" height="42" rx="5" fill="#eaf0f4" stroke="#526b7b" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="4  Successful run, missing IDs"><tspan x="13" y="214.00">4 Successful run, missing IDs</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Required {1,2} · actual {1}"><tspan x="13" y="228.00">Required {1,2} · actual {1}</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Requested [1]"><tspan x="13" y="239.00">Requested [1]</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="Fixed release · dlt 1.32.0"><tspan x="13" y="257.00">Fixed release · dlt 1.32.0</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Requests [1,2] · loads {1,2}"><tspan x="13" y="271.00">Requests [1,2] · loads {1,2}</tspan></text>
+<rect x="232" y="2" width="226" height="278" rx="5" fill="#fafbfd" stroke="#a3b1ba" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="B  Arrow · open end"><tspan x="243" y="17.00">B Arrow · open end</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="dlt 1.29.0 / 1.32.0 · ascending"><tspan x="243" y="30.00">dlt 1.29.0 / 1.32.0 · ascending</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Range [0,10) · null=exclude"><tspan x="243" y="42.00">Range [0,10) · null=exclude</tspan></text>
+<rect x="238" y="48" width="214" height="42" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="1  Valid local filtering"><tspan x="243" y="61.00">1 Valid local filtering</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Batch 1 · (id=1, NULL), (id=2, NULL)"><tspan x="243" y="75.00">Batch 1 · (id=1, NULL), (id=2, NULL)</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Both rows excluded"><tspan x="243" y="86.00">Both rows excluded</tspan></text>
+<path d="M345 91 L345 98" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="238" y="99" width="214" height="42" rx="5" fill="#fff3f1" stroke="#a84333" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="2  Incorrect source stop"><tspan x="243" y="112.00">2 Incorrect source stop</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Null comparison flags end crossing"><tspan x="243" y="126.00">Null comparison flags end crossing</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Read closes"><tspan x="243" y="137.00">Read closes</tspan></text>
+<path d="M345 142 L345 149" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="238" y="150" width="214" height="42" rx="5" fill="#ffffff" stroke="#a84333" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="3  Eligible unread suffix"><tspan x="243" y="163.00">3 Eligible unread suffix</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Batch 2 · (id=3, c=5), (id=4, c=6)"><tspan x="243" y="177.00">Batch 2 · (id=3, c=5), (id=4, c=6)</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Never requested"><tspan x="243" y="188.00">Never requested</tspan></text>
+<path d="M345 193 L345 200" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="238" y="201" width="214" height="42" rx="5" fill="#eaf0f4" stroke="#526b7b" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="4  Successful run, missing IDs"><tspan x="243" y="214.00">4 Successful run, missing IDs</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Required {3,4} · actual ∅"><tspan x="243" y="228.00">Required {3,4} · actual ∅</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Requested [1]"><tspan x="243" y="239.00">Requested [1]</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="Control · without row_order"><tspan x="243" y="257.00">Control · without row_order</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.25" font-weight="400" fill="#172b3a" text-anchor="start" data-source-label="Requests [1,2] · loads {3,4}"><tspan x="243" y="271.00">Requests [1,2] · loads {3,4}</tspan></text>
+</svg>

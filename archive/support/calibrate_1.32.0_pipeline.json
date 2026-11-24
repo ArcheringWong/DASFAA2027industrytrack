@@ -1,0 +1,244 @@
+[
+  {
+    "mode": "issue",
+    "level": "REAL_PIPELINE",
+    "dlt_version": "1.32.0",
+    "duckdb_version": "1.5.6",
+    "pyarrow_version": "26.0.0",
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "source_batches": [
+      {
+        "id": [
+          1,
+          2
+        ],
+        "ts": [
+          null,
+          null
+        ]
+      },
+      {
+        "id": [
+          3,
+          4
+        ],
+        "ts": [
+          5,
+          6
+        ]
+      }
+    ],
+    "expected_ids": [
+      3,
+      4
+    ],
+    "output_ids": [],
+    "target_rows": [],
+    "target_table_exists": false,
+    "load_info": "Pipeline d2_831c462a5848 load step finished in 0.11 seconds\n1 load package(s) were loaded to destination duckdb and into dataset d2_831c462a5848_dataset\nThe duckdb destination used duckdb:///:external: location to store data\nLoad package 1794615850.8910458 is LOADED and contains no failed jobs",
+    "state": {
+      "_state_version": 1,
+      "_state_engine_version": 4,
+      "_local": {
+        "first_run": false,
+        "_dev_mode": false,
+        "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+        "last_run_context": {
+          "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism\\.dlt",
+          "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D2_cross_mechanism"
+        },
+        "_last_extracted_at": "2026-11-14 00:24:11.062847+00:00",
+        "_last_extracted_hash": "8tRRis4xfU9rB2mn0x9OLpM3zfSGgbxQgdypYNxJqFU="
+      },
+      "pipeline_name": "d2_831c462a5848",
+      "schema_names": [
+        "d2_831c462a5848"
+      ],
+      "default_schema_name": "d2_831c462a5848",
+      "dataset_name": "d2_831c462a5848_dataset",
+      "destination_type": "dlt.destinations.duckdb",
+      "destination_name": null,
+      "_version_hash": "8tRRis4xfU9rB2mn0x9OLpM3zfSGgbxQgdypYNxJqFU="
+    },
+    "error": null,
+    "requested_batches": [
+      1
+    ],
+    "missing_ids": [
+      3,
+      4
+    ]
+  },
+  {
+    "mode": "no_order",
+    "level": "REAL_PIPELINE",
+    "dlt_version": "1.32.0",
+    "duckdb_version": "1.5.6",
+    "pyarrow_version": "26.0.0",
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "source_batches": [
+      {
+        "id": [
+          1,
+          2
+        ],
+        "ts": [
+          null,
+          null
+        ]
+      },
+      {
+        "id": [
+          3,
+          4
+        ],
+        "ts": [
+          5,
+          6
+        ]
+      }
+    ],
+    "expected_ids": [
+      3,
+      4
+    ],
+    "output_ids": [
+      3,
+      4
+    ],
+    "target_rows": [
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "target_table_exists": true,
+    "load_info": "Pipeline d2_e30008f06e26 load step finished in 0.12 seconds\n1 load package(s) were loaded to destination duckdb and into dataset d2_e30008f06e26_dataset\nThe duckdb destination used duckdb:///:external: location to store data\nLoad package 1794615851.5459156 is LOADED and contains no failed jobs",
+    "state": {
+      "_state_version": 1,
+      "_state_engine_version": 4,
+      "_local": {
+        "first_run": false,
+        "_dev_mode": false,
+        "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+        "last_run_context": {
+          "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism\\.dlt",
+          "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D2_cross_mechanism"
+        },
+        "_last_extracted_at": "2026-11-14 00:24:11.675718+00:00",
+        "_last_extracted_hash": "BsnWFS7aU0NCzV6EXqTWvuJOth3LlT0wYgC2tnz9ieI="
+      },
+      "pipeline_name": "d2_e30008f06e26",
+      "schema_names": [
+        "d2_e30008f06e26"
+      ],
+      "default_schema_name": "d2_e30008f06e26",
+      "dataset_name": "d2_e30008f06e26_dataset",
+      "destination_type": "dlt.destinations.duckdb",
+      "destination_name": null,
+      "_version_hash": "BsnWFS7aU0NCzV6EXqTWvuJOth3LlT0wYgC2tnz9ieI="
+    },
+    "error": null,
+    "requested_batches": [
+      1,
+      2
+    ],
+    "missing_ids": []
+  },
+  {
+    "mode": "nonnull_first",
+    "level": "REAL_PIPELINE",
+    "dlt_version": "1.32.0",
+    "duckdb_version": "1.5.6",
+    "pyarrow_version": "26.0.0",
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "source_batches": [
+      {
+        "id": [
+          1,
+          2
+        ],
+        "ts": [
+          1,
+          null
+        ]
+      },
+      {
+        "id": [
+          3,
+          4
+        ],
+        "ts": [
+          5,
+          6
+        ]
+      }
+    ],
+    "expected_ids": [
+      1,
+      3,
+      4
+    ],
+    "output_ids": [
+      1,
+      3,
+      4
+    ],
+    "target_rows": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "target_table_exists": true,
+    "load_info": "Pipeline d2_8e1f85f52b41 load step finished in 0.10 seconds\n1 load package(s) were loaded to destination duckdb and into dataset d2_8e1f85f52b41_dataset\nThe duckdb destination used duckdb:///:external: location to store data\nLoad package 1794615852.146606 is LOADED and contains no failed jobs",
+    "state": {
+      "_state_version": 1,
+      "_state_engine_version": 4,
+      "_local": {
+        "first_run": false,
+        "_dev_mode": false,
+        "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+        "last_run_context": {
+          "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism\\.dlt",
+          "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D2_cross_mechanism",
+          "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D2_cross_mechanism"
+        },
+        "_last_extracted_at": "2026-11-14 00:24:12.258024+00:00",
+        "_last_extracted_hash": "k8gx6GnlnT9njL5Zt+D7LlCvwO1urednJzeg4z6/eEE="
+      },
+      "pipeline_name": "d2_8e1f85f52b41",
+      "schema_names": [
+        "d2_8e1f85f52b41"
+      ],
+      "default_schema_name": "d2_8e1f85f52b41",
+      "dataset_name": "d2_8e1f85f52b41_dataset",
+      "destination_type": "dlt.destinations.duckdb",
+      "destination_name": null,
+      "_version_hash": "k8gx6GnlnT9njL5Zt+D7LlCvwO1urednJzeg4z6/eEE="
+    },
+    "error": null,
+    "requested_batches": [
+      1,
+      2
+    ],
+    "missing_ids": []
+  }
+]

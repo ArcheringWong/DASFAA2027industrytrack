@@ -1,0 +1,166 @@
+{
+  "table1": [
+    {
+      "run": "Closed start, dlt 1.31.0",
+      "requested": [
+        1
+      ],
+      "required_ids": [
+        1,
+        2
+      ],
+      "target_ids": [
+        1
+      ],
+      "error": null
+    },
+    {
+      "run": "Closed start, dlt 1.32.0",
+      "requested": [
+        1,
+        2
+      ],
+      "required_ids": [
+        1,
+        2
+      ],
+      "target_ids": [
+        1,
+        2
+      ],
+      "error": null
+    },
+    {
+      "run": "Null-first Arrow, dlt 1.29.0 and 1.32.0",
+      "requested": [
+        1
+      ],
+      "required_ids": [
+        3,
+        4
+      ],
+      "target_ids": [],
+      "error": null
+    },
+    {
+      "run": "Arrow control without row_order, dlt 1.32.0",
+      "requested": [
+        1,
+        2
+      ],
+      "required_ids": [
+        3,
+        4
+      ],
+      "target_ids": [
+        3,
+        4
+      ],
+      "error": null
+    }
+  ],
+  "per_release": [
+    {
+      "source": "archive/support/dlt_1_31_0.json",
+      "cursor": 2,
+      "run": "Closed start, dlt 1.31.0",
+      "requested": [
+        1
+      ],
+      "required_ids": [
+        1,
+        2
+      ],
+      "target_ids": [
+        1
+      ],
+      "error": null
+    },
+    {
+      "source": "archive/support/dlt_1_32_0.json",
+      "cursor": 2,
+      "run": "Closed start, dlt 1.32.0",
+      "requested": [
+        1,
+        2
+      ],
+      "required_ids": [
+        1,
+        2
+      ],
+      "target_ids": [
+        1,
+        2
+      ],
+      "error": null
+    },
+    {
+      "source": "archive/support/calibrate_1.29.0_pipeline.json",
+      "mode": "issue",
+      "run": "Null-first Arrow, dlt 1.29.0",
+      "requested": [
+        1
+      ],
+      "required_ids": [
+        3,
+        4
+      ],
+      "target_ids": [],
+      "error": null
+    },
+    {
+      "source": "archive/support/calibrate_1.32.0_pipeline.json",
+      "mode": "issue",
+      "run": "Null-first Arrow, dlt 1.32.0",
+      "requested": [
+        1
+      ],
+      "required_ids": [
+        3,
+        4
+      ],
+      "target_ids": [],
+      "error": null
+    },
+    {
+      "source": "archive/support/calibrate_1.32.0_pipeline.json",
+      "mode": "no_order",
+      "run": "Arrow control without row_order, dlt 1.32.0",
+      "requested": [
+        1,
+        2
+      ],
+      "required_ids": [
+        3,
+        4
+      ],
+      "target_ids": [
+        3,
+        4
+      ],
+      "error": null
+    }
+  ],
+  "input_hashes": {
+    "validation/witnesses-1.31.0.json": "fedbdeb77def386b0ea1685926abaae33d1b72b7ad3d9597694fd5547ff943d9",
+    "validation/witnesses-1.32.0.json": "a9ea9365a176a2e2dee3d0b016558fdfe65f4758179ed230d3da38cde03c7ac8",
+    "archive/support/dlt_1_31_0.json": "9859e8c992aa0be4bc0a1435863fe41be9bc5f5017deb98bb175fd90050844f5",
+    "archive/support/dlt_1_32_0.json": "c6a00147211618747feb014fdfc8b258edb23c25e027801c0606a6d3a70ed6d2",
+    "archive/support/calibrate_1.29.0_pipeline.json": "d9e35fe9864ac4210be43617891029cd9c72c59fbaa9a776aec879031060ced3",
+    "archive/support/calibrate_1.32.0_pipeline.json": "91b2ac6f49da0eb131a5ea53ba9d8bee16f6f6d8a6c0fe49964131cdb8a4cbaf"
+  },
+  "derivation": {
+    "dictionary": "Prior confirmed IDs union current IDs at or above the closed start.",
+    "arrow": "Non-null IDs whose source cursor lies in [0,10).",
+    "dictionary_input_source": "Recorded minimal replay source_rounds, same two-round cursor-2 fixture as the original script.",
+    "dictionary_success": "Original successful record contains rows/state; exception records use an error field.",
+    "oracle_pair_distinction": "D3 Oracle pair tests at cursor 1 are not substituted for the Table 1 cursor-2 input.",
+    "excluded_controls": [
+      "tie_same_page",
+      "no_tie_desc",
+      "ascending_newer",
+      "nonnull_first"
+    ]
+  },
+  "pass": true
+}

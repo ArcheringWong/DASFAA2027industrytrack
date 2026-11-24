@@ -1,0 +1,2559 @@
+{
+  "deterministic": [
+    {
+      "name": "confirmed_boundary_prefix",
+      "status": "TRUE_VIOLATION",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_0ca557fba167",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:11.300562+00:00",
+            "_last_extracted_hash": "JlWt5691XUvnvQ77wqg9rJZqu2fnyJz4TlTNnHSO/9c="
+          },
+          "schema_names": [
+            "d3_0ca557fba167"
+          ],
+          "dataset_name": "d3_0ca557fba167_dataset",
+          "pipeline_name": "d3_0ca557fba167",
+          "default_schema_name": "d3_0ca557fba167",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "JlWt5691XUvnvQ77wqg9rJZqu2fnyJz4TlTNnHSO/9c=",
+          "sources": {
+            "d3_0ca557fba167": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:11.300562+00:00",
+            "_last_extracted_hash": "JlWt5691XUvnvQ77wqg9rJZqu2fnyJz4TlTNnHSO/9c="
+          },
+          "schema_names": [
+            "d3_0ca557fba167"
+          ],
+          "dataset_name": "d3_0ca557fba167_dataset",
+          "pipeline_name": "d3_0ca557fba167",
+          "default_schema_name": "d3_0ca557fba167",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "JlWt5691XUvnvQ77wqg9rJZqu2fnyJz4TlTNnHSO/9c=",
+          "sources": {
+            "d3_0ca557fba167": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.882209,
+      "expected_status": "TRUE_VIOLATION",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "boundary_no_prefix",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_05e69e2fe4f7",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:12.007825+00:00",
+            "_last_extracted_hash": "OzffVjfEKnUvEbSx0QhQpUzD4xQoxn4qfELU3soP+oc="
+          },
+          "schema_names": [
+            "d3_05e69e2fe4f7"
+          ],
+          "dataset_name": "d3_05e69e2fe4f7_dataset",
+          "pipeline_name": "d3_05e69e2fe4f7",
+          "default_schema_name": "d3_05e69e2fe4f7",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "OzffVjfEKnUvEbSx0QhQpUzD4xQoxn4qfELU3soP+oc=",
+          "sources": {
+            "d3_05e69e2fe4f7": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:12.431360+00:00",
+            "_last_extracted_hash": "KMMbLcPqFjDaAzaK6N+0FZJKJajLzrrNGulVWvEmaN0="
+          },
+          "schema_names": [
+            "d3_05e69e2fe4f7"
+          ],
+          "dataset_name": "d3_05e69e2fe4f7_dataset",
+          "pipeline_name": "d3_05e69e2fe4f7",
+          "default_schema_name": "d3_05e69e2fe4f7",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "KMMbLcPqFjDaAzaK6N+0FZJKJajLzrrNGulVWvEmaN0=",
+          "sources": {
+            "d3_05e69e2fe4f7": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "Tp44cKMYfAuJ",
+                        "669czW83KR00"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.862435,
+      "expected_status": "PASS",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "boundary_same_page",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_091afc5ba869",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:12.871931+00:00",
+            "_last_extracted_hash": "RXvQSAIG+ccD77Uz9rCJ131YJE9gikHSaTFF+OuuNV8="
+          },
+          "schema_names": [
+            "d3_091afc5ba869"
+          ],
+          "dataset_name": "d3_091afc5ba869_dataset",
+          "pipeline_name": "d3_091afc5ba869",
+          "default_schema_name": "d3_091afc5ba869",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "RXvQSAIG+ccD77Uz9rCJ131YJE9gikHSaTFF+OuuNV8=",
+          "sources": {
+            "d3_091afc5ba869": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:13.310975+00:00",
+            "_last_extracted_hash": "qOQDr8PVeJQOI0KbDsegYyqX/uS2QUlSTiZwBUSeTUk="
+          },
+          "schema_names": [
+            "d3_091afc5ba869"
+          ],
+          "dataset_name": "d3_091afc5ba869_dataset",
+          "pipeline_name": "d3_091afc5ba869",
+          "default_schema_name": "d3_091afc5ba869",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "qOQDr8PVeJQOI0KbDsegYyqX/uS2QUlSTiZwBUSeTUk=",
+          "sources": {
+            "d3_091afc5ba869": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "Tp44cKMYfAuJ",
+                        "669czW83KR00"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.869151,
+      "expected_status": "PASS",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "base_already_incomplete",
+      "status": "INCONCLUSIVE",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_02e8eb1a7d7c",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:13.756904+00:00",
+            "_last_extracted_hash": "aZ9zj+8R6ijNKDb4ABlJSI251LruZs9XAnx6VNJGs6A="
+          },
+          "schema_names": [
+            "d3_02e8eb1a7d7c"
+          ],
+          "dataset_name": "d3_02e8eb1a7d7c_dataset",
+          "pipeline_name": "d3_02e8eb1a7d7c",
+          "default_schema_name": "d3_02e8eb1a7d7c",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "aZ9zj+8R6ijNKDb4ABlJSI251LruZs9XAnx6VNJGs6A=",
+          "sources": {
+            "d3_02e8eb1a7d7c": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:13.756904+00:00",
+            "_last_extracted_hash": "aZ9zj+8R6ijNKDb4ABlJSI251LruZs9XAnx6VNJGs6A="
+          },
+          "schema_names": [
+            "d3_02e8eb1a7d7c"
+          ],
+          "dataset_name": "d3_02e8eb1a7d7c_dataset",
+          "pipeline_name": "d3_02e8eb1a7d7c",
+          "default_schema_name": "d3_02e8eb1a7d7c",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "aZ9zj+8R6ijNKDb4ABlJSI251LruZs9XAnx6VNJGs6A=",
+          "sources": {
+            "d3_02e8eb1a7d7c": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.697536,
+      "expected_status": "INCONCLUSIVE",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "boundary_three_split",
+      "status": "TRUE_VIOLATION",
+      "expected_ids": [
+        1,
+        2,
+        3
+      ],
+      "missing_ids": [
+        2,
+        3
+      ],
+      "missing_cursor_values": {
+        "2": 1,
+        "3": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2,
+        "3": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_9670de8cc346",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            },
+            {
+              "id": 3,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:14.456376+00:00",
+            "_last_extracted_hash": "K7Z+QQ9AbQk5zBMtGLpX+/oni0XL1InUwiDCuuYW1oA="
+          },
+          "schema_names": [
+            "d3_9670de8cc346"
+          ],
+          "dataset_name": "d3_9670de8cc346_dataset",
+          "pipeline_name": "d3_9670de8cc346",
+          "default_schema_name": "d3_9670de8cc346",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "K7Z+QQ9AbQk5zBMtGLpX+/oni0XL1InUwiDCuuYW1oA=",
+          "sources": {
+            "d3_9670de8cc346": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:14.456376+00:00",
+            "_last_extracted_hash": "K7Z+QQ9AbQk5zBMtGLpX+/oni0XL1InUwiDCuuYW1oA="
+          },
+          "schema_names": [
+            "d3_9670de8cc346"
+          ],
+          "dataset_name": "d3_9670de8cc346_dataset",
+          "pipeline_name": "d3_9670de8cc346",
+          "default_schema_name": "d3_9670de8cc346",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "K7Z+QQ9AbQk5zBMtGLpX+/oni0XL1InUwiDCuuYW1oA=",
+          "sources": {
+            "d3_9670de8cc346": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.735739,
+      "expected_status": "TRUE_VIOLATION",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "boundary_three_coalesced",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2,
+        3
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_6d3c22695213",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            },
+            {
+              "id": 3,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2,
+          3
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:15.173042+00:00",
+            "_last_extracted_hash": "x/orQ4c4NpE9uwk/oTUMLAeWFT23hh22FRCtwMLU+7g="
+          },
+          "schema_names": [
+            "d3_6d3c22695213"
+          ],
+          "dataset_name": "d3_6d3c22695213_dataset",
+          "pipeline_name": "d3_6d3c22695213",
+          "default_schema_name": "d3_6d3c22695213",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "x/orQ4c4NpE9uwk/oTUMLAeWFT23hh22FRCtwMLU+7g=",
+          "sources": {
+            "d3_6d3c22695213": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:15.592153+00:00",
+            "_last_extracted_hash": "CLTGSnRnghc6ZeFWT4CaM/DZKhcUqXxqqmF/M84e4MM="
+          },
+          "schema_names": [
+            "d3_6d3c22695213"
+          ],
+          "dataset_name": "d3_6d3c22695213_dataset",
+          "pipeline_name": "d3_6d3c22695213",
+          "default_schema_name": "d3_6d3c22695213",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "CLTGSnRnghc6ZeFWT4CaM/DZKhcUqXxqqmF/M84e4MM=",
+          "sources": {
+            "d3_6d3c22695213": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00",
+                        "Tp44cKMYfAuJ",
+                        "Cn/dwi436vBb"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.840943,
+      "expected_status": "PASS",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    },
+    {
+      "name": "invalid_dropped_original_t1",
+      "status": "INVALID_TRANSFORMATION",
+      "reason": "original records changed or omitted",
+      "trace": null,
+      "pipeline_calls": 0,
+      "elapsed_seconds": 0,
+      "expected_status": "INVALID_TRANSFORMATION",
+      "reproduce": "python stateful_b.py <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\snapshots\\T1\\b_cases.json <WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\evidence\\T1\\b_1.31.0.json"
+    }
+  ],
+  "state_machine_exploration": [
+    {
+      "name": "boundary_three_split",
+      "status": "TRUE_VIOLATION",
+      "expected_ids": [
+        1,
+        2,
+        3
+      ],
+      "missing_ids": [
+        2,
+        3
+      ],
+      "missing_cursor_values": {
+        "2": 1,
+        "3": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2,
+        "3": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_5618c50e3d03",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            },
+            {
+              "id": 3,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:16.092685+00:00",
+            "_last_extracted_hash": "+C0+tu0VgHChi00obhHnqpQxCq48pSP/urk7gUAskMQ="
+          },
+          "schema_names": [
+            "d3_5618c50e3d03"
+          ],
+          "dataset_name": "d3_5618c50e3d03_dataset",
+          "pipeline_name": "d3_5618c50e3d03",
+          "default_schema_name": "d3_5618c50e3d03",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "+C0+tu0VgHChi00obhHnqpQxCq48pSP/urk7gUAskMQ=",
+          "sources": {
+            "d3_5618c50e3d03": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:16.092685+00:00",
+            "_last_extracted_hash": "+C0+tu0VgHChi00obhHnqpQxCq48pSP/urk7gUAskMQ="
+          },
+          "schema_names": [
+            "d3_5618c50e3d03"
+          ],
+          "dataset_name": "d3_5618c50e3d03_dataset",
+          "pipeline_name": "d3_5618c50e3d03",
+          "default_schema_name": "d3_5618c50e3d03",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "+C0+tu0VgHChi00obhHnqpQxCq48pSP/urk7gUAskMQ=",
+          "sources": {
+            "d3_5618c50e3d03": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.722419,
+      "generated_revision": 0
+    },
+    {
+      "name": "boundary_three_split",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2,
+        3
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_7b2f13c493f2",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            },
+            {
+              "id": 3,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2,
+          3
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:16.788210+00:00",
+            "_last_extracted_hash": "9eoKv7nBRLqdHNybTv9cFlCnz652nIL4tanMDvmD7tM="
+          },
+          "schema_names": [
+            "d3_7b2f13c493f2"
+          ],
+          "dataset_name": "d3_7b2f13c493f2_dataset",
+          "pipeline_name": "d3_7b2f13c493f2",
+          "default_schema_name": "d3_7b2f13c493f2",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "9eoKv7nBRLqdHNybTv9cFlCnz652nIL4tanMDvmD7tM=",
+          "sources": {
+            "d3_7b2f13c493f2": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:17.212780+00:00",
+            "_last_extracted_hash": "gqAoxDs+z+SDroZisQuctM2in4j8h+9HjVj+VVydm/c="
+          },
+          "schema_names": [
+            "d3_7b2f13c493f2"
+          ],
+          "dataset_name": "d3_7b2f13c493f2_dataset",
+          "pipeline_name": "d3_7b2f13c493f2",
+          "default_schema_name": "d3_7b2f13c493f2",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "gqAoxDs+z+SDroZisQuctM2in4j8h+9HjVj+VVydm/c=",
+          "sources": {
+            "d3_7b2f13c493f2": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00",
+                        "Tp44cKMYfAuJ",
+                        "Cn/dwi436vBb"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.859274,
+      "generated_revision": 1
+    },
+    {
+      "name": "boundary_three_split",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2,
+        3
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_e2db45a99ee4",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            },
+            {
+              "id": 3,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2,
+          3
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:17.668152+00:00",
+            "_last_extracted_hash": "Csh90/jzdaDaFM2rybrBYODRG3IDj7ulU/gcWkgmP0o="
+          },
+          "schema_names": [
+            "d3_e2db45a99ee4"
+          ],
+          "dataset_name": "d3_e2db45a99ee4_dataset",
+          "pipeline_name": "d3_e2db45a99ee4",
+          "default_schema_name": "d3_e2db45a99ee4",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "Csh90/jzdaDaFM2rybrBYODRG3IDj7ulU/gcWkgmP0o=",
+          "sources": {
+            "d3_e2db45a99ee4": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:18.107245+00:00",
+            "_last_extracted_hash": "82lH2NP3B0vzlHsSahPPagmzviFMxpqRXgXx3Dwct/s="
+          },
+          "schema_names": [
+            "d3_e2db45a99ee4"
+          ],
+          "dataset_name": "d3_e2db45a99ee4_dataset",
+          "pipeline_name": "d3_e2db45a99ee4",
+          "default_schema_name": "d3_e2db45a99ee4",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "82lH2NP3B0vzlHsSahPPagmzviFMxpqRXgXx3Dwct/s=",
+          "sources": {
+            "d3_e2db45a99ee4": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00",
+                        "Tp44cKMYfAuJ",
+                        "Cn/dwi436vBb"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.889875,
+      "generated_revision": 1
+    },
+    {
+      "name": "boundary_same_page",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_77c68a8f3964",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:18.548331+00:00",
+            "_last_extracted_hash": "ng80OS2v3kbIiCiqaYJEsbtJKPOcvTKwj3FAM0ThXJg="
+          },
+          "schema_names": [
+            "d3_77c68a8f3964"
+          ],
+          "dataset_name": "d3_77c68a8f3964_dataset",
+          "pipeline_name": "d3_77c68a8f3964",
+          "default_schema_name": "d3_77c68a8f3964",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "ng80OS2v3kbIiCiqaYJEsbtJKPOcvTKwj3FAM0ThXJg=",
+          "sources": {
+            "d3_77c68a8f3964": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:18.972039+00:00",
+            "_last_extracted_hash": "vqgzcKhn4A9h1EB8iNqDQzxbEOWPtWqMx2/Jr3WbI7g="
+          },
+          "schema_names": [
+            "d3_77c68a8f3964"
+          ],
+          "dataset_name": "d3_77c68a8f3964_dataset",
+          "pipeline_name": "d3_77c68a8f3964",
+          "default_schema_name": "d3_77c68a8f3964",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "vqgzcKhn4A9h1EB8iNqDQzxbEOWPtWqMx2/Jr3WbI7g=",
+          "sources": {
+            "d3_77c68a8f3964": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "Tp44cKMYfAuJ",
+                        "669czW83KR00"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.866559,
+      "generated_revision": 0
+    },
+    {
+      "name": "base_already_incomplete",
+      "status": "INCONCLUSIVE",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_1f62245de29a",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:19.457673+00:00",
+            "_last_extracted_hash": "w/CARRqZk7+4zXktlpChA4JiOt3A1xE+QgJ9k7INbjA="
+          },
+          "schema_names": [
+            "d3_1f62245de29a"
+          ],
+          "dataset_name": "d3_1f62245de29a_dataset",
+          "pipeline_name": "d3_1f62245de29a",
+          "default_schema_name": "d3_1f62245de29a",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "w/CARRqZk7+4zXktlpChA4JiOt3A1xE+QgJ9k7INbjA=",
+          "sources": {
+            "d3_1f62245de29a": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:19.457673+00:00",
+            "_last_extracted_hash": "w/CARRqZk7+4zXktlpChA4JiOt3A1xE+QgJ9k7INbjA="
+          },
+          "schema_names": [
+            "d3_1f62245de29a"
+          ],
+          "dataset_name": "d3_1f62245de29a_dataset",
+          "pipeline_name": "d3_1f62245de29a",
+          "default_schema_name": "d3_1f62245de29a",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "w/CARRqZk7+4zXktlpChA4JiOt3A1xE+QgJ9k7INbjA=",
+          "sources": {
+            "d3_1f62245de29a": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.737967,
+      "generated_revision": 1
+    },
+    {
+      "name": "base_already_incomplete",
+      "status": "INCONCLUSIVE",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_54098c3c2d9a",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:20.381815+00:00",
+            "_last_extracted_hash": "XF/eV4EuXtHNIpUwKvNkayTzeVvsJiLG9FNto3TQw50="
+          },
+          "schema_names": [
+            "d3_54098c3c2d9a"
+          ],
+          "dataset_name": "d3_54098c3c2d9a_dataset",
+          "pipeline_name": "d3_54098c3c2d9a",
+          "default_schema_name": "d3_54098c3c2d9a",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "XF/eV4EuXtHNIpUwKvNkayTzeVvsJiLG9FNto3TQw50=",
+          "sources": {
+            "d3_54098c3c2d9a": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:20.381815+00:00",
+            "_last_extracted_hash": "XF/eV4EuXtHNIpUwKvNkayTzeVvsJiLG9FNto3TQw50="
+          },
+          "schema_names": [
+            "d3_54098c3c2d9a"
+          ],
+          "dataset_name": "d3_54098c3c2d9a_dataset",
+          "pipeline_name": "d3_54098c3c2d9a",
+          "default_schema_name": "d3_54098c3c2d9a",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "XF/eV4EuXtHNIpUwKvNkayTzeVvsJiLG9FNto3TQw50=",
+          "sources": {
+            "d3_54098c3c2d9a": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.689015,
+      "generated_revision": 2
+    },
+    {
+      "name": "confirmed_boundary_prefix",
+      "status": "TRUE_VIOLATION",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_35725a5d0f2d",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:21.067239+00:00",
+            "_last_extracted_hash": "FelFV+ZqvyD3wQUFYmS3Xpq9aRjmhTAqmuknL5E0Ij0="
+          },
+          "schema_names": [
+            "d3_35725a5d0f2d"
+          ],
+          "dataset_name": "d3_35725a5d0f2d_dataset",
+          "pipeline_name": "d3_35725a5d0f2d",
+          "default_schema_name": "d3_35725a5d0f2d",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "FelFV+ZqvyD3wQUFYmS3Xpq9aRjmhTAqmuknL5E0Ij0=",
+          "sources": {
+            "d3_35725a5d0f2d": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:21.067239+00:00",
+            "_last_extracted_hash": "FelFV+ZqvyD3wQUFYmS3Xpq9aRjmhTAqmuknL5E0Ij0="
+          },
+          "schema_names": [
+            "d3_35725a5d0f2d"
+          ],
+          "dataset_name": "d3_35725a5d0f2d_dataset",
+          "pipeline_name": "d3_35725a5d0f2d",
+          "default_schema_name": "d3_35725a5d0f2d",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "FelFV+ZqvyD3wQUFYmS3Xpq9aRjmhTAqmuknL5E0Ij0=",
+          "sources": {
+            "d3_35725a5d0f2d": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.690475,
+      "generated_revision": 0
+    },
+    {
+      "name": "confirmed_boundary_prefix",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_b4d43959bf28",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:21.769542+00:00",
+            "_last_extracted_hash": "MB8gfr4O9mUsHbsyEvMm1xBKZbnECwVb5aG0GHmiLWE="
+          },
+          "schema_names": [
+            "d3_b4d43959bf28"
+          ],
+          "dataset_name": "d3_b4d43959bf28_dataset",
+          "pipeline_name": "d3_b4d43959bf28",
+          "default_schema_name": "d3_b4d43959bf28",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "MB8gfr4O9mUsHbsyEvMm1xBKZbnECwVb5aG0GHmiLWE=",
+          "sources": {
+            "d3_b4d43959bf28": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:22.196293+00:00",
+            "_last_extracted_hash": "Tb7haAzzO+hO1QZ0wrRApsVfy+CXHDl10dskTYlmlL0="
+          },
+          "schema_names": [
+            "d3_b4d43959bf28"
+          ],
+          "dataset_name": "d3_b4d43959bf28_dataset",
+          "pipeline_name": "d3_b4d43959bf28",
+          "default_schema_name": "d3_b4d43959bf28",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "Tb7haAzzO+hO1QZ0wrRApsVfy+CXHDl10dskTYlmlL0=",
+          "sources": {
+            "d3_b4d43959bf28": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "Tp44cKMYfAuJ",
+                        "669czW83KR00"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.863267,
+      "generated_revision": 1
+    },
+    {
+      "name": "confirmed_boundary_prefix",
+      "status": "PASS",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [],
+      "missing_cursor_values": {},
+      "missing_batch_numbers": {},
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_fb48af9518d5",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            },
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "target_ids": [
+          1,
+          2
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:22.620522+00:00",
+            "_last_extracted_hash": "KQqhzZtP7ZsWVqFWOZg32f0qpac17V5QCuPk+bTvono="
+          },
+          "schema_names": [
+            "d3_fb48af9518d5"
+          ],
+          "dataset_name": "d3_fb48af9518d5_dataset",
+          "pipeline_name": "d3_fb48af9518d5",
+          "default_schema_name": "d3_fb48af9518d5",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "KQqhzZtP7ZsWVqFWOZg32f0qpac17V5QCuPk+bTvono=",
+          "sources": {
+            "d3_fb48af9518d5": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 2,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:23.076324+00:00",
+            "_last_extracted_hash": "Zbwjyn9QdQZ/xLrSWysRS5piOnp8y2vA8yoRtn2+rfU="
+          },
+          "schema_names": [
+            "d3_fb48af9518d5"
+          ],
+          "dataset_name": "d3_fb48af9518d5_dataset",
+          "pipeline_name": "d3_fb48af9518d5",
+          "default_schema_name": "d3_fb48af9518d5",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "Zbwjyn9QdQZ/xLrSWysRS5piOnp8y2vA8yoRtn2+rfU=",
+          "sources": {
+            "d3_fb48af9518d5": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "Tp44cKMYfAuJ",
+                        "669czW83KR00"
+                      ],
+                      "start_value": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.879734,
+      "generated_revision": 1
+    },
+    {
+      "name": "confirmed_boundary_prefix",
+      "status": "TRUE_VIOLATION",
+      "expected_ids": [
+        1,
+        2
+      ],
+      "missing_ids": [
+        2
+      ],
+      "missing_cursor_values": {
+        "2": 1
+      },
+      "missing_batch_numbers": {
+        "2": 2
+      },
+      "trace": {
+        "label": "single",
+        "dlt_version": "1.31.0",
+        "pipeline_name": "d3_0d015efb12ef",
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "current_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ],
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prior_requested_batches": [
+          1
+        ],
+        "requested_batches": [
+          1
+        ],
+        "prior_target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "target_ids": [
+          1
+        ],
+        "state_before": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:23.499373+00:00",
+            "_last_extracted_hash": "dPzVlaz5X0n+Ikw+4lrZMt4Jka4D9Zs59P328g56PNo="
+          },
+          "schema_names": [
+            "d3_0d015efb12ef"
+          ],
+          "dataset_name": "d3_0d015efb12ef_dataset",
+          "pipeline_name": "d3_0d015efb12ef",
+          "default_schema_name": "d3_0d015efb12ef",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "dPzVlaz5X0n+Ikw+4lrZMt4Jka4D9Zs59P328g56PNo=",
+          "sources": {
+            "d3_0d015efb12ef": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "state_after": {
+          "_state_version": 1,
+          "_state_engine_version": 4,
+          "_local": {
+            "first_run": false,
+            "_dev_mode": false,
+            "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+            "last_run_context": {
+              "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value\\.dlt",
+              "local_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "run_dir": "<WORKSPACE>\\D_checkpoint_safety\\D4_engineering_value",
+              "uri": "file:///<WORKSPACE>/D_checkpoint_safety/D4_engineering_value"
+            },
+            "_last_extracted_at": "2026-11-14 05:13:23.499373+00:00",
+            "_last_extracted_hash": "dPzVlaz5X0n+Ikw+4lrZMt4Jka4D9Zs59P328g56PNo="
+          },
+          "schema_names": [
+            "d3_0d015efb12ef"
+          ],
+          "dataset_name": "d3_0d015efb12ef_dataset",
+          "pipeline_name": "d3_0d015efb12ef",
+          "default_schema_name": "d3_0d015efb12ef",
+          "destination_type": "dlt.destinations.duckdb",
+          "destination_name": null,
+          "_version_hash": "dPzVlaz5X0n+Ikw+4lrZMt4Jka4D9Zs59P328g56PNo=",
+          "sources": {
+            "d3_0d015efb12ef": {
+              "resources": {
+                "events": {
+                  "incremental": {
+                    "ts": {
+                      "initial_value": 0,
+                      "last_value": 1,
+                      "unique_hashes": [
+                        "669czW83KR00"
+                      ],
+                      "start_value": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": null
+      },
+      "pipeline_calls": 2,
+      "elapsed_seconds": 0.66843,
+      "generated_revision": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+  "executable": "<PYTHON_HOME>\\python.exe",
+  "architecture": "64bit"
+}

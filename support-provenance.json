@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "source": "D_checkpoint_safety/evidence/dlt_1_31_0.json",
+      "package_path": "archive/support/dlt_1_31_0.json",
+      "sha256": "9859e8c992aa0be4bc0a1435863fe41be9bc5f5017deb98bb175fd90050844f5",
+      "original_sha256": "a94d7d86ce29c92891f062d11aa4578b1f7c91abff55ee54d36334b42267d672",
+      "representation": "metadata-redacted review derivative"
+    },
+    {
+      "source": "D_checkpoint_safety/evidence/dlt_1_32_0.json",
+      "package_path": "archive/support/dlt_1_32_0.json",
+      "sha256": "c6a00147211618747feb014fdfc8b258edb23c25e027801c0606a6d3a70ed6d2",
+      "original_sha256": "ee82f51958601e72a03ad5b53c8528b794cec6510ca51a8232efd1414989226a",
+      "representation": "metadata-redacted review derivative"
+    },
+    {
+      "source": "D_checkpoint_safety/D2_cross_mechanism/evidence/calibrate_1.29.0_pipeline.json",
+      "package_path": "archive/support/calibrate_1.29.0_pipeline.json",
+      "sha256": "d9e35fe9864ac4210be43617891029cd9c72c59fbaa9a776aec879031060ced3",
+      "original_sha256": "eccb9e7acd12d7f1f4774fe40099a557eef0af46be890323f17ff46162b40bc6",
+      "representation": "metadata-redacted review derivative"
+    },
+    {
+      "source": "D_checkpoint_safety/D2_cross_mechanism/evidence/calibrate_1.32.0_pipeline.json",
+      "package_path": "archive/support/calibrate_1.32.0_pipeline.json",
+      "sha256": "91b2ac6f49da0eb131a5ea53ba9d8bee16f6f6d8a6c0fe49964131cdb8a4cbaf",
+      "original_sha256": "2a09e4a53853ab2d38f0de0321bc82245f880f5fa31004f681425443c98552c9",
+      "representation": "metadata-redacted review derivative"
+    },
+    {
+      "source": "D_checkpoint_safety/EXPERIMENT_PROTOCOL_D0.md",
+      "package_path": "archive/support/EXPERIMENT_PROTOCOL_D0.md",
+      "sha256": "248863c71bbbf7ffa220f737fcaa704499c5476794587cd0cd785ea0632435ec",
+      "original_sha256": "248863c71bbbf7ffa220f737fcaa704499c5476794587cd0cd785ea0632435ec",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "D_checkpoint_safety/D2_cross_mechanism/D2_CANDIDATE_REVIEW.md",
+      "package_path": "archive/support/D2_CANDIDATE_REVIEW.md",
+      "sha256": "2ceef0211da09ab50ce28a43db375a1d5e827918c84ad04ecf197a375ba8f751",
+      "original_sha256": "2ceef0211da09ab50ce28a43db375a1d5e827918c84ad04ecf197a375ba8f751",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "D_checkpoint_safety/D2_cross_mechanism/D2_EXPERIMENT_PROTOCOL.md",
+      "package_path": "archive/support/D2_EXPERIMENT_PROTOCOL.md",
+      "sha256": "6a70c10b4de32abd4209861fa3bc10bfec9bae755f351b7a1666cb91f64456da",
+      "original_sha256": "6a70c10b4de32abd4209861fa3bc10bfec9bae755f351b7a1666cb91f64456da",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "DASFAA2027_Industry_Revision/oracle_repair/cursor_contract.py",
+      "package_path": "code/cursor_contract.py",
+      "sha256": "5279b4b780baaddf0b814aa48b4539c62a9a464f5e7029647f515ddaad3b95f3",
+      "original_sha256": "5279b4b780baaddf0b814aa48b4539c62a9a464f5e7029647f515ddaad3b95f3",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "DASFAA2027_Industry_Revision/oracle_repair/d2_tool.py",
+      "package_path": "code/d2_tool.py",
+      "sha256": "60191486486224c687e4475de020f0eda313e553d5783567468823758d50de24",
+      "original_sha256": "60191486486224c687e4475de020f0eda313e553d5783567468823758d50de24",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "DASFAA2027_Industry_Revision/oracle_repair/metamorphic.py",
+      "package_path": "code/metamorphic.py",
+      "sha256": "d288cb3440f6a8f8a254b655df1f4bed6caf72ae554ac0f046296223b9bd93e5",
+      "original_sha256": "d288cb3440f6a8f8a254b655df1f4bed6caf72ae554ac0f046296223b9bd93e5",
+      "representation": "exact-byte copy"
+    },
+    {
+      "source": "DASFAA2027_Industry_Revision/oracle_repair/oracle-repair.diff",
+      "package_path": "code/oracle-repair.diff",
+      "sha256": "ce3025b96ab82a90c11cc67b6f51887fe5db23aba91f13260a88ed7ca4793830",
+      "original_sha256": "ce3025b96ab82a90c11cc67b6f51887fe5db23aba91f13260a88ed7ca4793830",
+      "representation": "exact-byte copy"
+    }
+  ],
+  "hash_definition": "sha256 verifies review files; original_sha256 identifies frozen originals"
+}

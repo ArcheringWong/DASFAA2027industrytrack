@@ -1,0 +1,465 @@
+{
+  "environment": {
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "dlt": "1.31.0",
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0"
+  },
+  "tests": [
+    {
+      "label": "T6 confirmed_boundary_prefix on 1.31.0",
+      "input": {
+        "name": "confirmed_boundary_prefix",
+        "versions": [
+          "1.31.0",
+          "1.32.0"
+        ],
+        "format": "dict",
+        "row_order": "desc",
+        "end_value": null,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "confirmed_boundary",
+          "count": 1
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_target_ids": [
+          1
+        ],
+        "missing_ids": [
+          2
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION"
+      },
+      "actual": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_oracle_ids": [
+          1,
+          2
+        ],
+        "base_target_ids": [
+          1,
+          2
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [
+          1
+        ],
+        "missing_ids": [
+          2
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION",
+        "real_trace": {
+          "name": "confirmed_boundary_prefix",
+          "case": {
+            "name": "confirmed_boundary_prefix",
+            "versions": [
+              "1.31.0",
+              "1.32.0"
+            ],
+            "format": "dict",
+            "row_order": "desc",
+            "end_value": null,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "base_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "confirmed_boundary",
+              "count": 1
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "transformed_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.31.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.31.0",
+            "pipeline_name": "d3_bd89aed3e220",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:39.366711+00:00",
+                "_last_extracted_hash": "1o37oDEZC2dUrYu5mYV/pWHBjOKLDZ5zVqrWPNXrqbE="
+              },
+              "default_schema_name": "d3_bd89aed3e220",
+              "schema_names": [
+                "d3_bd89aed3e220"
+              ],
+              "dataset_name": "d3_bd89aed3e220_dataset",
+              "pipeline_name": "d3_bd89aed3e220",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "1o37oDEZC2dUrYu5mYV/pWHBjOKLDZ5zVqrWPNXrqbE=",
+              "sources": {
+                "d3_bd89aed3e220": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:40.176281+00:00",
+                "_last_extracted_hash": "P8UDdjzRVj3b7MIwvRaZDqsDj3/TkesoNw/BCVmk/7E="
+              },
+              "default_schema_name": "d3_bd89aed3e220",
+              "schema_names": [
+                "d3_bd89aed3e220"
+              ],
+              "dataset_name": "d3_bd89aed3e220_dataset",
+              "pipeline_name": "d3_bd89aed3e220",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "P8UDdjzRVj3b7MIwvRaZDqsDj3/TkesoNw/BCVmk/7E=",
+              "sources": {
+                "d3_bd89aed3e220": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.31.0",
+            "pipeline_name": "d3_78ee6b447458",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_ids": [
+              1
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:41.081947+00:00",
+                "_last_extracted_hash": "XdiYx9mRfsaMqhzxVf28saTMMS41xonrJltb3tA1bF8="
+              },
+              "default_schema_name": "d3_78ee6b447458",
+              "schema_names": [
+                "d3_78ee6b447458"
+              ],
+              "dataset_name": "d3_78ee6b447458_dataset",
+              "pipeline_name": "d3_78ee6b447458",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "XdiYx9mRfsaMqhzxVf28saTMMS41xonrJltb3tA1bF8=",
+              "sources": {
+                "d3_78ee6b447458": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:41.081947+00:00",
+                "_last_extracted_hash": "XdiYx9mRfsaMqhzxVf28saTMMS41xonrJltb3tA1bF8="
+              },
+              "default_schema_name": "d3_78ee6b447458",
+              "schema_names": [
+                "d3_78ee6b447458"
+              ],
+              "dataset_name": "d3_78ee6b447458_dataset",
+              "pipeline_name": "d3_78ee6b447458",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "XdiYx9mRfsaMqhzxVf28saTMMS41xonrJltb3tA1bF8=",
+              "sources": {
+                "d3_78ee6b447458": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [
+            2
+          ],
+          "status": "TRUE_VIOLATION",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 3.143613
+        }
+      },
+      "pass": true
+    }
+  ],
+  "passed": 1,
+  "tested": 1
+}

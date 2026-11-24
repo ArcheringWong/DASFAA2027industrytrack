@@ -1,0 +1,79 @@
+--- base/a_cases.json
++++ T3/a_cases.json
+@@ -314,5 +314,76 @@
+     "expected_status_by_version": {
+       "1.32.0": "INVALID_TRANSFORMATION"
+     }
++  },
++  {
++    "name": "arrow_upper_bound_four",
++    "versions": [
++      "1.32.0"
++    ],
++    "format": "arrow",
++    "row_order": "asc",
++    "end_value": 4,
++    "missing_policy": "exclude",
++    "range_start": "closed",
++    "write_disposition": "append",
++    "stable_ties": true,
++    "source_complete": true,
++    "prior_batches": [],
++    "base_batches": [
++      [
++        {
++          "id": 5,
++          "ts": null
++        },
++        {
++          "id": 6,
++          "ts": null
++        }
++      ],
++      [
++        {
++          "id": 3,
++          "ts": 5
++        },
++        {
++          "id": 4,
++          "ts": 6
++        }
++      ]
++    ],
++    "expected_status_by_version": {
++      "1.32.0": "PASS"
++    }
++  },
++  {
++    "name": "invalid_include_under_bound",
++    "versions": [
++      "1.32.0"
++    ],
++    "format": "arrow",
++    "row_order": "asc",
++    "end_value": 4,
++    "missing_policy": "include",
++    "range_start": "closed",
++    "write_disposition": "append",
++    "stable_ties": true,
++    "source_complete": true,
++    "prior_batches": [],
++    "base_batches": [
++      [
++        {
++          "id": 3,
++          "ts": 5
++        },
++        {
++          "id": 4,
++          "ts": 6
++        }
++      ]
++    ],
++    "expected_status_by_version": {
++      "1.32.0": "INVALID_TRANSFORMATION"
++    },
++    "invalid_reason": "prefix id 5 is not proven neutral; prefix id 6 is not proven neutral"
+   }
+ ]

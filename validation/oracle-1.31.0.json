@@ -1,0 +1,468 @@
+{
+  "validation_kind": "submission_preparation_oracle_checks",
+  "observed_at_utc": "2026-11-21T07:21:52.846659+00:00",
+  "environment": {
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "dlt": "1.31.0",
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0"
+  },
+  "elapsed_seconds": 18.514999999999418,
+  "tests": [
+    {
+      "label": "T6 confirmed_boundary_prefix on 1.31.0",
+      "input": {
+        "name": "confirmed_boundary_prefix",
+        "versions": [
+          "1.31.0",
+          "1.32.0"
+        ],
+        "format": "dict",
+        "row_order": "desc",
+        "end_value": null,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "confirmed_boundary",
+          "count": 1
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_target_ids": [
+          1
+        ],
+        "missing_ids": [
+          2
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION"
+      },
+      "actual": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_oracle_ids": [
+          1,
+          2
+        ],
+        "base_target_ids": [
+          1,
+          2
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [
+          1
+        ],
+        "missing_ids": [
+          2
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION",
+        "real_trace": {
+          "name": "confirmed_boundary_prefix",
+          "case": {
+            "name": "confirmed_boundary_prefix",
+            "versions": [
+              "1.31.0",
+              "1.32.0"
+            ],
+            "format": "dict",
+            "row_order": "desc",
+            "end_value": null,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "base_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "confirmed_boundary",
+              "count": 1
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "transformed_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.31.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.31.0",
+            "pipeline_name": "d3_2f2ad7b0eec3",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:46.790805+00:00",
+                "_last_extracted_hash": "5/pq5bPa9pwZm3hDLMzjMeSyXCmos2WqlUnwrXfssXU="
+              },
+              "dataset_name": "d3_2f2ad7b0eec3_dataset",
+              "schema_names": [
+                "d3_2f2ad7b0eec3"
+              ],
+              "default_schema_name": "d3_2f2ad7b0eec3",
+              "pipeline_name": "d3_2f2ad7b0eec3",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "5/pq5bPa9pwZm3hDLMzjMeSyXCmos2WqlUnwrXfssXU=",
+              "sources": {
+                "d3_2f2ad7b0eec3": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:48.641310+00:00",
+                "_last_extracted_hash": "VycWBhg7QkZ8afxD/XKm/1fhW9Vu5yqWfft8j6G3KZs="
+              },
+              "dataset_name": "d3_2f2ad7b0eec3_dataset",
+              "schema_names": [
+                "d3_2f2ad7b0eec3"
+              ],
+              "default_schema_name": "d3_2f2ad7b0eec3",
+              "pipeline_name": "d3_2f2ad7b0eec3",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "VycWBhg7QkZ8afxD/XKm/1fhW9Vu5yqWfft8j6G3KZs=",
+              "sources": {
+                "d3_2f2ad7b0eec3": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.31.0",
+            "pipeline_name": "d3_f9a44a0b29b9",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_ids": [
+              1
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:50.704615+00:00",
+                "_last_extracted_hash": "q0jOKsI+CrF9qTq8VyWn5TzN9+Lyt9daQfTCP4pLSRE="
+              },
+              "dataset_name": "d3_f9a44a0b29b9_dataset",
+              "schema_names": [
+                "d3_f9a44a0b29b9"
+              ],
+              "default_schema_name": "d3_f9a44a0b29b9",
+              "pipeline_name": "d3_f9a44a0b29b9",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "q0jOKsI+CrF9qTq8VyWn5TzN9+Lyt9daQfTCP4pLSRE=",
+              "sources": {
+                "d3_f9a44a0b29b9": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:50.704615+00:00",
+                "_last_extracted_hash": "q0jOKsI+CrF9qTq8VyWn5TzN9+Lyt9daQfTCP4pLSRE="
+              },
+              "dataset_name": "d3_f9a44a0b29b9_dataset",
+              "schema_names": [
+                "d3_f9a44a0b29b9"
+              ],
+              "default_schema_name": "d3_f9a44a0b29b9",
+              "pipeline_name": "d3_f9a44a0b29b9",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "q0jOKsI+CrF9qTq8VyWn5TzN9+Lyt9daQfTCP4pLSRE=",
+              "sources": {
+                "d3_f9a44a0b29b9": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [
+            2
+          ],
+          "status": "TRUE_VIOLATION",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 8.11358
+        }
+      },
+      "pass": true
+    }
+  ],
+  "passed": 1,
+  "tested": 1
+}

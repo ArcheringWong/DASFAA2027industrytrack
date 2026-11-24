@@ -1,0 +1,174 @@
+{
+  "certifi==2026.10.23": {
+    "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+    "wheel_filename": "certifi-2026.10.23-py3-none-any.whl"
+  },
+  "charset-normalizer==3.5.2": {
+    "sha256": "87e50a3e7cb90af586b6c5faf23e302a970415ac73bd7bd90a515a04b427ef96",
+    "wheel_filename": "charset_normalizer-3.5.2-cp311-cp311-win_amd64.whl"
+  },
+  "click==8.5.1": {
+    "sha256": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37",
+    "wheel_filename": "click-8.5.1-py3-none-any.whl"
+  },
+  "croniter==7.0.0": {
+    "sha256": "92090bce3cef195a037a46b78430c4cdd6250e90671d9d7dcd9e486147daaca4",
+    "wheel_filename": "croniter-7.0.0-py3-none-any.whl"
+  },
+  "dlt-1.31.0-py3-none-any.whl": {
+    "sha256": "4264984207bc0ebd8e5bd3b55104db863b590e4e86ff32b8c8e00ae11c32aee3",
+    "source": "D_checkpoint_safety/D5_runtime_guard/evidence/wheels/dlt-1.31.0-py3-none-any.whl"
+  },
+  "dlt-1.32.0-py3-none-any.whl": {
+    "sha256": "254274f208a04b8fff7fe5739cb1cb6655afceb2a4ac74cbd5e4fee60d2b2f10",
+    "source": "D_checkpoint_safety/D5_runtime_guard/evidence/wheels/dlt-1.32.0-py3-none-any.whl"
+  },
+  "duckdb==1.5.6": {
+    "sha256": "dda311932cf5aae955a53fe28a4fc1700c2ab5fa02dc1f165abdd5ec6c39141e",
+    "wheel_filename": "duckdb-1.5.6-cp311-cp311-win_amd64.whl"
+  },
+  "fsspec==2026.9.0": {
+    "sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f",
+    "wheel_filename": "fsspec-2026.9.0-py3-none-any.whl"
+  },
+  "gitdb==4.0.12": {
+    "sha256": "67073e15955400952c6565cc3e707c554a4eea2e428946f7a4c162fab9bd9bcf",
+    "wheel_filename": "gitdb-4.0.12-py3-none-any.whl"
+  },
+  "gitpython==3.2.1": {
+    "sha256": "d66b0832aa8755c1a84892937282df0befb16c97e5a64aeebd68be9c5e323f53",
+    "wheel_filename": "gitpython-3.2.1-py3-none-any.whl"
+  },
+  "giturlparse==0.16.0": {
+    "sha256": "c4812b7227991d23ada03bc06b34c001de74907a5ea6e293e087d881b348d4bc",
+    "wheel_filename": "giturlparse-0.16.0-py3-none-any.whl"
+  },
+  "humanize==4.17.0": {
+    "sha256": "02d0899527760efe18011944f882df4970943b4cdff7b5a0ba7fed43a576ef98",
+    "wheel_filename": "humanize-4.17.0-py3-none-any.whl"
+  },
+  "hypothesis==6.170.15": {
+    "sha256": "b48cb85180255ec3eb3b3e5d49068c9ad447b25e34fccafdabae63d2c3d854ad",
+    "wheel_filename": "hypothesis-6.170.15-cp311-cp311-win_amd64.whl"
+  },
+  "idna==3.20": {
+    "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+    "wheel_filename": "idna-3.20-py3-none-any.whl"
+  },
+  "jsonpath-ng==1.16.0": {
+    "sha256": "c5e28ddd70ebcaeba9af3c2b880933fbfeb108b5e68c9edb84e1b57803091218",
+    "wheel_filename": "jsonpath_ng-1.16.0-py3-none-any.whl"
+  },
+  "markdown-it-py==4.3.0": {
+    "sha256": "7aa1511a46c39138de78d9eba92ce47e63124d8003fc98b3a351909e04239efa",
+    "wheel_filename": "markdown_it_py-4.3.0-py3-none-any.whl"
+  },
+  "mdurl==0.1.2": {
+    "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+    "wheel_filename": "mdurl-0.1.2-py3-none-any.whl"
+  },
+  "orjson==3.13.0": {
+    "sha256": "a0377d6962fa431c93ecd78fdea771bb62ec545b24ee0c5d4e32acf2260af259",
+    "wheel_filename": "orjson-3.13.0-cp311-cp311-win_amd64.whl"
+  },
+  "packaging==26.3": {
+    "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "wheel_filename": "packaging-26.3-py3-none-any.whl"
+  },
+  "pathvalidate==3.3.1": {
+    "sha256": "5263baab691f8e1af96092fa5137ee17df5bdfbd6cff1fcac4d6ef4bc2e1735f",
+    "wheel_filename": "pathvalidate-3.3.1-py3-none-any.whl"
+  },
+  "pendulum==3.3.0": {
+    "sha256": "891a812f990cff95a899d095484cfc4ec63c3730ed3e269c466c82c1efffd10e",
+    "wheel_filename": "pendulum-3.3.0-cp311-cp311-win_amd64.whl"
+  },
+  "pluggy==1.7.0": {
+    "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+    "wheel_filename": "pluggy-1.7.0-py3-none-any.whl"
+  },
+  "pyarrow==26.0.0": {
+    "sha256": "13b0972a3dc71b642050d1bc72664a3916e14f59c943d8c1368154d6e4b0c2d5",
+    "wheel_filename": "pyarrow-26.0.0-cp311-cp311-win_amd64.whl"
+  },
+  "pygments==2.21.0": {
+    "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+    "wheel_filename": "pygments-2.21.0-py3-none-any.whl"
+  },
+  "python-dateutil==4.0.0": {
+    "sha256": "a5e246f79eb80475e691bf93862cead98decd8a498cf53ba0516fcdc0f50dc1c",
+    "wheel_filename": "python_dateutil-4.0.0-py3-none-any.whl"
+  },
+  "pytz==2026.6": {
+    "sha256": "7fed3fee8fd6bd4a2b7b75a8d56021d0624127bf69bd5691f115db929ac570b3",
+    "wheel_filename": "pytz-2026.6-py3-none-any.whl"
+  },
+  "pywin32==312": {
+    "sha256": "d11417d84412f859b722fad0841b3614459ed0047f7542d8362e77884f6b6e8a",
+    "wheel_filename": "pywin32-312-cp311-cp311-win_amd64.whl"
+  },
+  "pyyaml==6.0.3": {
+    "sha256": "9f3bfb4965eb874431221a3ff3fdcddc7e74e3b07799e0e84ca4a0f867d449bf",
+    "wheel_filename": "pyyaml-6.0.3-cp311-cp311-win_amd64.whl"
+  },
+  "requests==2.34.2": {
+    "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+    "wheel_filename": "requests-2.34.2-py3-none-any.whl"
+  },
+  "requirements-parser==0.13.1": {
+    "sha256": "6e385663eb32589d16e5b22bb6e5251a57908e73803ffff438b53cd6ea2056e0",
+    "wheel_filename": "requirements_parser-0.13.1-py3-none-any.whl"
+  },
+  "rich-argparse==1.8.0": {
+    "sha256": "d2a3ce7854654e2253c578763ab0a32f05016f23a55fadba7b9a91b6c0e92142",
+    "wheel_filename": "rich_argparse-1.8.0-py3-none-any.whl"
+  },
+  "rich==15.0.0": {
+    "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+    "wheel_filename": "rich-15.0.0-py3-none-any.whl"
+  },
+  "semver==3.1.1": {
+    "sha256": "c00cf7dac88a352bc6a4a997d6ac0bf95ba835c589bc0c54f7b76f9e2a45123a",
+    "wheel_filename": "semver-3.1.1-py3-none-any.whl"
+  },
+  "simplejson==4.3.0": {
+    "sha256": "bdf1b6d4efc52ef1c4003f8973ef5854c9ea156b94af56890ad7e10cd6b21110",
+    "wheel_filename": "simplejson-4.3.0-cp311-cp311-win_amd64.whl"
+  },
+  "smmap==5.0.3": {
+    "sha256": "c106e05d5a61449cf6ba9a1e650227ecfb141590d2a98412103ff35d89fc7b2f",
+    "wheel_filename": "smmap-5.0.3-py3-none-any.whl"
+  },
+  "sortedcontainers==2.4.0": {
+    "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+    "wheel_filename": "sortedcontainers-2.4.0-py3-none-any.whl"
+  },
+  "sqlglot==30.31.0": {
+    "sha256": "51a876a43edecf8ee6fd4c872cf6713d899c4234256bba0be96a8c7c8d8781e8",
+    "wheel_filename": "sqlglot-30.31.0-py3-none-any.whl"
+  },
+  "tenacity==9.2.1": {
+    "sha256": "9e56f17539296baab7beabb08b92f6ee3d7be92d8be72d763360677c2ad6580e",
+    "wheel_filename": "tenacity-9.2.1-py3-none-any.whl"
+  },
+  "tomlkit==0.15.2": {
+    "sha256": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437",
+    "wheel_filename": "tomlkit-0.15.2-py3-none-any.whl"
+  },
+  "typing-extensions==4.16.0": {
+    "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+    "wheel_filename": "typing_extensions-4.16.0-py3-none-any.whl"
+  },
+  "tzdata==2026.6": {
+    "sha256": "0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec",
+    "wheel_filename": "tzdata-2026.6-py3-none-any.whl"
+  },
+  "urllib3==2.8.0": {
+    "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+    "wheel_filename": "urllib3-2.8.0-py3-none-any.whl"
+  },
+  "win-precise-time==1.4.2": {
+    "sha256": "0897bb055f19f3b4336e2ba6bee0115ac20fd7ec615a6d736632e2df77f8851a",
+    "wheel_filename": "win_precise_time-1.4.2-cp311-cp311-win_amd64.whl"
+  }
+}

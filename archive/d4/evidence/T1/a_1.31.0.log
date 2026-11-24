@@ -1,0 +1,7 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_131\Scripts\python.exe -m pytest test_a.py -q --disable-warnings
+EXIT: 0
+STDOUT:
+.......                                                                  [100%]
+7 passed in 6.20s
+
+STDERR:

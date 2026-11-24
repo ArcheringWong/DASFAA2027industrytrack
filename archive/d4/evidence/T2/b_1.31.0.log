@@ -1,0 +1,6 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_131\Scripts\python.exe stateful_b.py <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\snapshots\T2\b_cases.json <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\evidence\T2\b_1.31.0.json --explore
+EXIT: 0
+STDOUT:
+{"deterministic": 4, "generated": 10, "statuses": ["TRUE_VIOLATION", "PASS", "PASS", "INCONCLUSIVE"]}
+
+STDERR:

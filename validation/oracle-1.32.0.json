@@ -1,0 +1,1840 @@
+{
+  "validation_kind": "submission_preparation_oracle_checks",
+  "observed_at_utc": "2026-11-21T07:21:33.589933+00:00",
+  "environment": {
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "dlt": "1.32.0",
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0"
+  },
+  "elapsed_seconds": 46.375,
+  "tests": [
+    {
+      "label": "T1–T3 default open",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3
+        ],
+        "target_ids": [
+          2,
+          3
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T2 explicit open",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "set_range_end",
+          "rows": [],
+          "format": null,
+          "value": "open"
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3
+        ],
+        "target_ids": [
+          2,
+          3
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T5 explicit closed",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "set_range_end",
+          "rows": [],
+          "format": null,
+          "value": "closed"
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3,
+        4
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3,
+          4
+        ],
+        "target_ids": [
+          2,
+          3,
+          4
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            10
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "closed"
+      },
+      "pass": true
+    },
+    {
+      "label": "T4 all-null then mixed Arrow; no order",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "arrow"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 11,
+              "cursor": null,
+              "commit_step": 11
+            },
+            {
+              "id": 12,
+              "cursor": null,
+              "commit_step": 12
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 13,
+              "cursor": null,
+              "commit_step": 13
+            },
+            {
+              "id": 14,
+              "cursor": 9,
+              "commit_step": 14
+            },
+            {
+              "id": 15,
+              "cursor": 10,
+              "commit_step": 15
+            },
+            {
+              "id": 16,
+              "cursor": 11,
+              "commit_step": 16
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        14
+      ],
+      "actual": {
+        "expected_ids": [
+          14
+        ],
+        "target_ids": [
+          14
+        ],
+        "target_rows": [
+          [
+            14,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1,
+          2
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T4 include null and exclude equality",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "include",
+        "base_batches": [
+          [
+            {
+              "id": 21,
+              "ts": null
+            },
+            {
+              "id": 22,
+              "ts": 9
+            },
+            {
+              "id": 23,
+              "ts": 10
+            }
+          ]
+        ]
+      },
+      "expected": [
+        21,
+        22
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [],
+          "new_ids": [
+            21,
+            22
+          ],
+          "final_ids": [
+            21,
+            22
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T4 include null and exclude equality",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_7918336e2157",
+          "prior_batches": [],
+          "current_batches": [
+            [
+              {
+                "id": 21,
+                "ts": null
+              },
+              {
+                "id": 22,
+                "ts": 9
+              },
+              {
+                "id": 23,
+                "ts": 10
+              }
+            ]
+          ],
+          "prior_requested_batches": [],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [],
+          "target_rows": [
+            [
+              21,
+              null
+            ],
+            [
+              22,
+              9
+            ]
+          ],
+          "target_ids": [
+            21,
+            22
+          ],
+          "state_before": null,
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:21:12.610321+00:00",
+              "_last_extracted_hash": "RuCNjBRmEjtscWQFhk24OQHrFOR157ev/ZYM70oXevM="
+            },
+            "dataset_name": "d3_7918336e2157_dataset",
+            "default_schema_name": "d3_7918336e2157",
+            "schema_names": [
+              "d3_7918336e2157"
+            ],
+            "pipeline_name": "d3_7918336e2157",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "RuCNjBRmEjtscWQFhk24OQHrFOR157ev/ZYM70oXevM="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T5 explicit closed with include null",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "include",
+        "base_batches": [
+          [
+            {
+              "id": 21,
+              "ts": null
+            },
+            {
+              "id": 22,
+              "ts": 9
+            },
+            {
+              "id": 23,
+              "ts": 10
+            }
+          ]
+        ],
+        "range_end": "closed"
+      },
+      "expected": [
+        21,
+        22,
+        23
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [],
+          "new_ids": [
+            21,
+            22,
+            23
+          ],
+          "final_ids": [
+            21,
+            22,
+            23
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T5 explicit closed with include null",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_f829541d81a9",
+          "prior_batches": [],
+          "current_batches": [
+            [
+              {
+                "id": 21,
+                "ts": null
+              },
+              {
+                "id": 22,
+                "ts": 9
+              },
+              {
+                "id": 23,
+                "ts": 10
+              }
+            ]
+          ],
+          "prior_requested_batches": [],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [],
+          "target_rows": [
+            [
+              21,
+              null
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ]
+          ],
+          "target_ids": [
+            21,
+            22,
+            23
+          ],
+          "state_before": null,
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:21:15.148180+00:00",
+              "_last_extracted_hash": "WdbYW7QLvGNvB1FsiRvUmU49kGFTtPDMoCnuuoD+jgg="
+            },
+            "dataset_name": "d3_f829541d81a9_dataset",
+            "default_schema_name": "d3_f829541d81a9",
+            "schema_names": [
+              "d3_f829541d81a9"
+            ],
+            "pipeline_name": "d3_f829541d81a9",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "WdbYW7QLvGNvB1FsiRvUmU49kGFTtPDMoCnuuoD+jgg="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T2/T3 bounded prior does not move start",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "prior_batches": [
+          [
+            {
+              "id": 31,
+              "ts": 9
+            },
+            {
+              "id": 32,
+              "ts": 10
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 33,
+              "ts": 1
+            },
+            {
+              "id": 34,
+              "ts": 10
+            },
+            {
+              "id": 35,
+              "ts": 11
+            }
+          ]
+        ]
+      },
+      "expected": [
+        31,
+        33
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [
+            31
+          ],
+          "new_ids": [
+            33
+          ],
+          "final_ids": [
+            31,
+            33
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T2/T3 bounded prior does not move start",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_50cd8aa9aba4",
+          "prior_batches": [
+            [
+              {
+                "id": 31,
+                "ts": 9
+              },
+              {
+                "id": 32,
+                "ts": 10
+              }
+            ]
+          ],
+          "current_batches": [
+            [
+              {
+                "id": 33,
+                "ts": 1
+              },
+              {
+                "id": 34,
+                "ts": 10
+              },
+              {
+                "id": 35,
+                "ts": 11
+              }
+            ]
+          ],
+          "prior_requested_batches": [
+            1
+          ],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [
+            [
+              31,
+              9
+            ]
+          ],
+          "target_rows": [
+            [
+              31,
+              9
+            ],
+            [
+              33,
+              1
+            ]
+          ],
+          "target_ids": [
+            31,
+            33
+          ],
+          "state_before": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:21:17.448509+00:00",
+              "_last_extracted_hash": "eypfx9RrQiGkVSOGy0nr1tzsoiVkNOY2D9pMPAyOdbI="
+            },
+            "dataset_name": "d3_50cd8aa9aba4_dataset",
+            "default_schema_name": "d3_50cd8aa9aba4",
+            "schema_names": [
+              "d3_50cd8aa9aba4"
+            ],
+            "pipeline_name": "d3_50cd8aa9aba4",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "eypfx9RrQiGkVSOGy0nr1tzsoiVkNOY2D9pMPAyOdbI="
+          },
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+              },
+              "_last_extracted_at": "2026-11-21 07:21:17.448509+00:00",
+              "_last_extracted_hash": "eypfx9RrQiGkVSOGy0nr1tzsoiVkNOY2D9pMPAyOdbI="
+            },
+            "dataset_name": "d3_50cd8aa9aba4_dataset",
+            "default_schema_name": "d3_50cd8aa9aba4",
+            "schema_names": [
+              "d3_50cd8aa9aba4"
+            ],
+            "pipeline_name": "d3_50cd8aa9aba4",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "eypfx9RrQiGkVSOGy0nr1tzsoiVkNOY2D9pMPAyOdbI="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T6 confirmed_boundary_prefix on 1.32.0",
+      "input": {
+        "name": "confirmed_boundary_prefix",
+        "versions": [
+          "1.31.0",
+          "1.32.0"
+        ],
+        "format": "dict",
+        "row_order": "desc",
+        "end_value": null,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "confirmed_boundary",
+          "count": 1
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_target_ids": [
+          1,
+          2
+        ],
+        "missing_ids": [],
+        "transformed_requests": [
+          1,
+          2
+        ],
+        "status": "PASS"
+      },
+      "actual": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_oracle_ids": [
+          1,
+          2
+        ],
+        "base_target_ids": [
+          1,
+          2
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [
+          1,
+          2
+        ],
+        "missing_ids": [],
+        "transformed_requests": [
+          1,
+          2
+        ],
+        "status": "PASS",
+        "real_trace": {
+          "name": "confirmed_boundary_prefix",
+          "case": {
+            "name": "confirmed_boundary_prefix",
+            "versions": [
+              "1.31.0",
+              "1.32.0"
+            ],
+            "format": "dict",
+            "row_order": "desc",
+            "end_value": null,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "base_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "confirmed_boundary",
+              "count": 1
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "transformed_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.32.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_36bdd9905783",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:21.497142+00:00",
+                "_last_extracted_hash": "KscjBUqSlgjWlyS5NGZfiBHOoSgkpcO6MeJydJQhz64="
+              },
+              "dataset_name": "d3_36bdd9905783_dataset",
+              "default_schema_name": "d3_36bdd9905783",
+              "schema_names": [
+                "d3_36bdd9905783"
+              ],
+              "pipeline_name": "d3_36bdd9905783",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "KscjBUqSlgjWlyS5NGZfiBHOoSgkpcO6MeJydJQhz64=",
+              "sources": {
+                "d3_36bdd9905783": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:23.485889+00:00",
+                "_last_extracted_hash": "VE2So1INhwXx9AXAIBgLJrKvsbOxJzBH2/a2/RWA6oI="
+              },
+              "dataset_name": "d3_36bdd9905783_dataset",
+              "default_schema_name": "d3_36bdd9905783",
+              "schema_names": [
+                "d3_36bdd9905783"
+              ],
+              "pipeline_name": "d3_36bdd9905783",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "VE2So1INhwXx9AXAIBgLJrKvsbOxJzBH2/a2/RWA6oI=",
+              "sources": {
+                "d3_36bdd9905783": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_81cec4963e95",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1,
+              2
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:25.540805+00:00",
+                "_last_extracted_hash": "8NwsDl4Yoe+ltyaQEom6IZPKSQlv5R5FtRKQt9Jk5Ds="
+              },
+              "dataset_name": "d3_81cec4963e95_dataset",
+              "default_schema_name": "d3_81cec4963e95",
+              "schema_names": [
+                "d3_81cec4963e95"
+              ],
+              "pipeline_name": "d3_81cec4963e95",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "8NwsDl4Yoe+ltyaQEom6IZPKSQlv5R5FtRKQt9Jk5Ds=",
+              "sources": {
+                "d3_81cec4963e95": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:27.569431+00:00",
+                "_last_extracted_hash": "hCwfKEwLzt8OEyYh6qM2+p9JoSDASqxm5XSefWL7ESo="
+              },
+              "dataset_name": "d3_81cec4963e95_dataset",
+              "default_schema_name": "d3_81cec4963e95",
+              "schema_names": [
+                "d3_81cec4963e95"
+              ],
+              "pipeline_name": "d3_81cec4963e95",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "hCwfKEwLzt8OEyYh6qM2+p9JoSDASqxm5XSefWL7ESo=",
+              "sources": {
+                "d3_81cec4963e95": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [],
+          "status": "PASS",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 8.260014
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T6 excluded_null_prefix on 1.32.0",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          3,
+          4
+        ],
+        "transformed_target_ids": [],
+        "missing_ids": [
+          3,
+          4
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION"
+      },
+      "actual": {
+        "eligible_ids": [
+          3,
+          4
+        ],
+        "transformed_oracle_ids": [
+          3,
+          4
+        ],
+        "base_target_ids": [
+          3,
+          4
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [],
+        "missing_ids": [
+          3,
+          4
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION",
+        "real_trace": {
+          "name": "excluded_null_prefix",
+          "case": {
+            "name": "excluded_null_prefix",
+            "versions": [
+              "1.32.0"
+            ],
+            "format": "arrow",
+            "row_order": "asc",
+            "end_value": 10,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [],
+            "base_batches": [
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "excluded_null",
+              "count": 2
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [],
+              "new_ids": [
+                3,
+                4
+              ],
+              "final_ids": [
+                3,
+                4
+              ],
+              "model_checkpoint": 0
+            },
+            "transformed_oracle": {
+              "prior_ids": [],
+              "new_ids": [
+                3,
+                4
+              ],
+              "final_ids": [
+                3,
+                4
+              ],
+              "model_checkpoint": 0
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ],
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.32.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_0cd2cc20690a",
+            "prior_batches": [],
+            "current_batches": [
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prior_requested_batches": [],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [],
+            "target_rows": [
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                6
+              ]
+            ],
+            "target_ids": [
+              3,
+              4
+            ],
+            "state_before": null,
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:29.654429+00:00",
+                "_last_extracted_hash": "yOpyup+so/R2JMrbmHjgoxU75O+KxWsAbLNTwM+R9V0="
+              },
+              "dataset_name": "d3_0cd2cc20690a_dataset",
+              "default_schema_name": "d3_0cd2cc20690a",
+              "schema_names": [
+                "d3_0cd2cc20690a"
+              ],
+              "pipeline_name": "d3_0cd2cc20690a",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "yOpyup+so/R2JMrbmHjgoxU75O+KxWsAbLNTwM+R9V0="
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_b4006a700bb9",
+            "prior_batches": [],
+            "current_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ],
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prior_requested_batches": [],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [],
+            "target_rows": [],
+            "target_ids": [],
+            "state_before": null,
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_SubmissionReady"
+                },
+                "_last_extracted_at": "2026-11-21 07:21:32.042646+00:00",
+                "_last_extracted_hash": "a5jgYkqhri8d2OTJ/zdqORxbg1rSnLuYT2BNQGXT0go="
+              },
+              "dataset_name": "d3_b4006a700bb9_dataset",
+              "default_schema_name": "d3_b4006a700bb9",
+              "schema_names": [
+                "d3_b4006a700bb9"
+              ],
+              "pipeline_name": "d3_b4006a700bb9",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "a5jgYkqhri8d2OTJ/zdqORxbg1rSnLuYT2BNQGXT0go="
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [
+            3,
+            4
+          ],
+          "status": "TRUE_VIOLATION",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 4.745805
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "range-end change rejects a comparison before execution",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        },
+        "transformed_range_end": "closed"
+      },
+      "expected": "INVALID_TRANSFORMATION",
+      "actual": {
+        "name": "excluded_null_prefix",
+        "case": {
+          "name": "excluded_null_prefix",
+          "versions": [
+            "1.32.0"
+          ],
+          "format": "arrow",
+          "row_order": "asc",
+          "end_value": 10,
+          "missing_policy": "exclude",
+          "range_start": "closed",
+          "write_disposition": "append",
+          "stable_ties": true,
+          "source_complete": true,
+          "prior_batches": [],
+          "base_batches": [
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ],
+          "prefix_recipe": {
+            "kind": "excluded_null",
+            "count": 2
+          },
+          "transformed_range_end": "closed"
+        },
+        "validation": {
+          "valid": false,
+          "reasons": [
+            "read bounds changed"
+          ],
+          "generated_prefix_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ]
+          ],
+          "original_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "transformed_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "variant_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ],
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ]
+        },
+        "dlt_version": "1.32.0",
+        "base": null,
+        "transformed": null,
+        "status": "INVALID_TRANSFORMATION",
+        "elapsed_seconds": 0.000348
+      },
+      "pass": true
+    },
+    {
+      "label": "include policy does not make a null prefix neutral",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "include",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        }
+      },
+      "expected": "INVALID_TRANSFORMATION",
+      "actual": {
+        "name": "excluded_null_prefix",
+        "case": {
+          "name": "excluded_null_prefix",
+          "versions": [
+            "1.32.0"
+          ],
+          "format": "arrow",
+          "row_order": "asc",
+          "end_value": 10,
+          "missing_policy": "include",
+          "range_start": "closed",
+          "write_disposition": "append",
+          "stable_ties": true,
+          "source_complete": true,
+          "prior_batches": [],
+          "base_batches": [
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ],
+          "prefix_recipe": {
+            "kind": "excluded_null",
+            "count": 2
+          }
+        },
+        "validation": {
+          "valid": false,
+          "reasons": [
+            "prefix id 5 is not proven neutral",
+            "prefix id 6 is not proven neutral",
+            "expected eligible identities changed"
+          ],
+          "generated_prefix_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ]
+          ],
+          "original_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "transformed_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "final_ids": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "model_checkpoint": 0
+          },
+          "variant_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ],
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ]
+        },
+        "dlt_version": "1.32.0",
+        "base": null,
+        "transformed": null,
+        "status": "INVALID_TRANSFORMATION",
+        "elapsed_seconds": 0.000199
+      },
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "tested": 11
+}

@@ -1,0 +1,258 @@
+{
+  "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+  "dlt_version": "1.31.0",
+  "duckdb_version": "1.5.6",
+  "cases": [
+    {
+      "case": "issue_4523",
+      "first_pages": [
+        1
+      ],
+      "second_pages": [
+        1
+      ],
+      "rows": [
+        [
+          1,
+          2
+        ]
+      ],
+      "state": {
+        "_state_version": 1,
+        "_state_engine_version": 4,
+        "_local": {
+          "first_run": false,
+          "_dev_mode": false,
+          "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety",
+          "last_run_context": {
+            "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\.dlt",
+            "local_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "run_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "uri": "file:///<WORKSPACE>/D_checkpoint_safety"
+          },
+          "_last_extracted_at": "2026-11-13 15:14:38.601436+00:00",
+          "_last_extracted_hash": "kfGdNtlUttJepi29P9VPx5km8PRi+3UlrUHh2fzKUwE="
+        },
+        "default_schema_name": "d0_9abf22c88694",
+        "pipeline_name": "d0_9abf22c88694",
+        "schema_names": [
+          "d0_9abf22c88694"
+        ],
+        "dataset_name": "d0_9abf22c88694_dataset",
+        "destination_type": "dlt.destinations.duckdb",
+        "destination_name": null,
+        "_version_hash": "kfGdNtlUttJepi29P9VPx5km8PRi+3UlrUHh2fzKUwE=",
+        "sources": {
+          "d0_9abf22c88694": {
+            "resources": {
+              "events": {
+                "incremental": {
+                  "ts": {
+                    "initial_value": 0,
+                    "last_value": 2,
+                    "unique_hashes": [
+                      "669czW83KR00"
+                    ],
+                    "start_value": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "tie_same_page",
+      "first_pages": [
+        1
+      ],
+      "second_pages": [
+        1
+      ],
+      "rows": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "state": {
+        "_state_version": 2,
+        "_state_engine_version": 4,
+        "_local": {
+          "first_run": false,
+          "_dev_mode": false,
+          "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety",
+          "last_run_context": {
+            "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\.dlt",
+            "local_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "run_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "uri": "file:///<WORKSPACE>/D_checkpoint_safety"
+          },
+          "_last_extracted_at": "2026-11-13 15:14:40.397082+00:00",
+          "_last_extracted_hash": "0ZZM+WPxZWs7lXR6B+CP4rya7gNSMhRutSoTL0dLwiI="
+        },
+        "default_schema_name": "d0_b5a59e6222f6",
+        "pipeline_name": "d0_b5a59e6222f6",
+        "schema_names": [
+          "d0_b5a59e6222f6"
+        ],
+        "dataset_name": "d0_b5a59e6222f6_dataset",
+        "destination_type": "dlt.destinations.duckdb",
+        "destination_name": null,
+        "_version_hash": "0ZZM+WPxZWs7lXR6B+CP4rya7gNSMhRutSoTL0dLwiI=",
+        "sources": {
+          "d0_b5a59e6222f6": {
+            "resources": {
+              "events": {
+                "incremental": {
+                  "ts": {
+                    "initial_value": 0,
+                    "last_value": 2,
+                    "unique_hashes": [
+                      "669czW83KR00",
+                      "Tp44cKMYfAuJ"
+                    ],
+                    "start_value": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "no_tie_desc",
+      "first_pages": [
+        1
+      ],
+      "second_pages": [
+        1,
+        2
+      ],
+      "rows": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "state": {
+        "_state_version": 2,
+        "_state_engine_version": 4,
+        "_local": {
+          "first_run": false,
+          "_dev_mode": false,
+          "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety",
+          "last_run_context": {
+            "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\.dlt",
+            "local_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "run_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "uri": "file:///<WORKSPACE>/D_checkpoint_safety"
+          },
+          "_last_extracted_at": "2026-11-13 15:14:41.957437+00:00",
+          "_last_extracted_hash": "ZWci7RGfyxe97y/65l83zYjVL1Q7O3U2ZUnqhFzt6Vg="
+        },
+        "default_schema_name": "d0_8955a076313f",
+        "pipeline_name": "d0_8955a076313f",
+        "schema_names": [
+          "d0_8955a076313f"
+        ],
+        "dataset_name": "d0_8955a076313f_dataset",
+        "destination_type": "dlt.destinations.duckdb",
+        "destination_name": null,
+        "_version_hash": "ZWci7RGfyxe97y/65l83zYjVL1Q7O3U2ZUnqhFzt6Vg=",
+        "sources": {
+          "d0_8955a076313f": {
+            "resources": {
+              "events": {
+                "incremental": {
+                  "ts": {
+                    "initial_value": 0,
+                    "last_value": 3,
+                    "unique_hashes": [
+                      "Tp44cKMYfAuJ"
+                    ],
+                    "start_value": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "ascending_newer",
+      "first_pages": [
+        1
+      ],
+      "second_pages": [
+        1,
+        2
+      ],
+      "rows": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "state": {
+        "_state_version": 2,
+        "_state_engine_version": 4,
+        "_local": {
+          "first_run": false,
+          "_dev_mode": false,
+          "initial_cwd": "<WORKSPACE>\\D_checkpoint_safety",
+          "last_run_context": {
+            "settings_dir": "<WORKSPACE>\\D_checkpoint_safety\\.dlt",
+            "local_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "run_dir": "<WORKSPACE>\\D_checkpoint_safety",
+            "uri": "file:///<WORKSPACE>/D_checkpoint_safety"
+          },
+          "_last_extracted_at": "2026-11-13 15:14:45.540817+00:00",
+          "_last_extracted_hash": "vIwoQ8/p+KpFU+Aw/7M9/sN0c1mQbFf5+pvEMWfPzQk="
+        },
+        "default_schema_name": "d0_96bc2c108a50",
+        "pipeline_name": "d0_96bc2c108a50",
+        "schema_names": [
+          "d0_96bc2c108a50"
+        ],
+        "dataset_name": "d0_96bc2c108a50_dataset",
+        "destination_type": "dlt.destinations.duckdb",
+        "destination_name": null,
+        "_version_hash": "vIwoQ8/p+KpFU+Aw/7M9/sN0c1mQbFf5+pvEMWfPzQk=",
+        "sources": {
+          "d0_96bc2c108a50": {
+            "resources": {
+              "events": {
+                "incremental": {
+                  "ts": {
+                    "initial_value": 0,
+                    "last_value": 3,
+                    "unique_hashes": [
+                      "Tp44cKMYfAuJ"
+                    ],
+                    "start_value": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "files": [
+    {
+      "source": "DASFAA2027_Industry_Final/latex/figures/prepare_industry_figures.py",
+      "path": "figure_sources/prepare_industry_figures.py",
+      "sha256": "98c9651bdf9b6d565a8344e788142bff745d3dd587b221ca90cc181f2273cc4f"
+    },
+    {
+      "source": "DASFAA2027_Industry_FirstImpression/latex/figures/prepare_early_stop_figure.py",
+      "path": "figure_sources/prepare_early_stop_figure.py",
+      "sha256": "4470351d1334ec0d82653375cb22dea983675861b6c5b06771fe6033a5e4e84b"
+    },
+    {
+      "source": "DASFAA2027_Industry_Final/latex/figures/figure1_reference_and_experiment.svg",
+      "path": "figure_sources/figure1_reference_and_experiment.svg",
+      "sha256": "a991091e5f3ed82f764496c943ea0ab3609efef4b1e9a257891088d1b8edfbe3"
+    },
+    {
+      "source": "DASFAA2027_Industry_Final/latex/figures/figure1_reference_and_experiment.pdf",
+      "path": "figure_sources/figure1_reference_and_experiment.pdf",
+      "sha256": "cf2303b2a1c4c18acfc886c5280b59ebd3e8d3b11cfba84b2028949a72fe69b3"
+    },
+    {
+      "source": "DASFAA2027_Industry_Final/latex/figures/figure2_early_stop_paths.svg",
+      "path": "figure_sources/figure2_early_stop_paths.svg",
+      "sha256": "818625485f5b270b42d57ae72ba276cd237d8d2360ba48ecc9fafd81241c4664"
+    },
+    {
+      "source": "DASFAA2027_Industry_Final/latex/figures/figure2_early_stop_paths.pdf",
+      "path": "figure_sources/figure2_early_stop_paths.pdf",
+      "sha256": "a6340f135f029e55cd9746c88747eb0d7a4a9598dfdfb9af8fb3eb9a00860e89"
+    }
+  ]
+}

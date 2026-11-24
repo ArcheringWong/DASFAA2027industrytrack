@@ -1,0 +1,27 @@
+{
+  "snapshots": [
+    "base",
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "schemes_agree": true,
+  "new_tasks": {
+    "T1": [
+      "boundary_three_split",
+      "boundary_three_coalesced",
+      "invalid_dropped_original_t1"
+    ],
+    "T2": [
+      "arrow_split_with_null",
+      "arrow_split_without_null",
+      "invalid_mixed_format_t2"
+    ],
+    "T3": [
+      "arrow_upper_bound_four",
+      "invalid_include_under_bound"
+    ]
+  },
+  "source_hashes_match": true,
+  "code_snapshots_unchanged": true
+}

@@ -1,0 +1,92 @@
+{
+  "versions": {
+    "1.31.0": {
+      "TRUE_VIOLATION": 1,
+      "PASS": 3,
+      "INCONCLUSIVE": 1,
+      "INVALID_TRANSFORMATION": 4
+    },
+    "1.32.0": {
+      "PASS": 10,
+      "TRUE_VIOLATION": 1,
+      "INVALID_TRANSFORMATION": 8
+    }
+  },
+  "core": {
+    "1.31.0/confirmed_boundary_prefix": {
+      "status": "TRUE_VIOLATION",
+      "expected": [
+        1,
+        2
+      ],
+      "base_actual": [
+        1,
+        2
+      ],
+      "transformed_actual": [
+        1
+      ],
+      "base_requested": [
+        1
+      ],
+      "transformed_requested": [
+        1
+      ],
+      "elapsed_seconds": 2.013042
+    },
+    "1.32.0/confirmed_boundary_prefix": {
+      "status": "PASS",
+      "expected": [
+        1,
+        2
+      ],
+      "base_actual": [
+        1,
+        2
+      ],
+      "transformed_actual": [
+        1,
+        2
+      ],
+      "base_requested": [
+        1
+      ],
+      "transformed_requested": [
+        1,
+        2
+      ],
+      "elapsed_seconds": 2.238989
+    },
+    "1.32.0/excluded_null_prefix": {
+      "status": "TRUE_VIOLATION",
+      "expected": [
+        3,
+        4
+      ],
+      "base_actual": [
+        3,
+        4
+      ],
+      "transformed_actual": [],
+      "base_requested": [
+        1
+      ],
+      "transformed_requested": [
+        1
+      ],
+      "elapsed_seconds": 1.245301
+    }
+  },
+  "invalid_no_execution": 12,
+  "normal_passes": 13,
+  "inconclusive": 1,
+  "execution_errors": 0,
+  "real_scenario_executions": 32,
+  "pipeline_run_calls": 52,
+  "sha256": {
+    "metamorphic.py": "19442dcb24c5ce970512bfa8a285b1cec574a6d6fdfd2da5a359f050f8f31eb7",
+    "manual_pairs.py": "e093fd2836be232b3e6c83fcbe8daf500898ce2f65284965046b2292fef765ad",
+    "make_cases.py": "296782ec423cf07fbc92f960e64be2ca90ae463ce64b06ea227c0206345bed6c",
+    "verify_evidence.py": "03c4cd1fd167da0fb860d6c3b90a55ad4065d469a3ce7c6b5251efb543d3f5d3"
+  }
+}

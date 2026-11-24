@@ -1,0 +1,16 @@
+# Local credentials, environments and generated replay output
+.env
+.env.*
+api/
+.aws/
+.codex/
+.dlt/
+__pycache__/
+*.py[cod]
+*.pem
+*.key
+/env131/
+/env132/
+/replay/
+/recomputed*/
+/figure-rebuild/

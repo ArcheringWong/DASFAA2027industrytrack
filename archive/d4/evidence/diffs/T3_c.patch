@@ -1,0 +1,76 @@
+--- base/c_cases.json
++++ T3/c_cases.json
+@@ -301,5 +301,73 @@
+     "expected_status_by_version": {
+       "1.32.0": "INVALID_TRANSFORMATION"
+     }
++  },
++  {
++    "name": "arrow_upper_bound_four",
++    "versions": [
++      "1.32.0"
++    ],
++    "format": "arrow",
++    "row_order": "asc",
++    "end_value": 4,
++    "missing_policy": "exclude",
++    "range_start": "closed",
++    "write_disposition": "append",
++    "stable_ties": true,
++    "source_complete": true,
++    "prior_batches": [],
++    "base_batches": [
++      [
++        {
++          "id": 3,
++          "ts": 5
++        },
++        {
++          "id": 4,
++          "ts": 6
++        }
++      ]
++    ],
++    "prefix_recipe": {
++      "kind": "excluded_null",
++      "count": 2
++    },
++    "expected_status_by_version": {
++      "1.32.0": "PASS"
++    }
++  },
++  {
++    "name": "invalid_include_under_bound",
++    "versions": [
++      "1.32.0"
++    ],
++    "format": "arrow",
++    "row_order": "asc",
++    "end_value": 4,
++    "missing_policy": "include",
++    "range_start": "closed",
++    "write_disposition": "append",
++    "stable_ties": true,
++    "source_complete": true,
++    "prior_batches": [],
++    "base_batches": [
++      [
++        {
++          "id": 3,
++          "ts": 5
++        },
++        {
++          "id": 4,
++          "ts": 6
++        }
++      ]
++    ],
++    "prefix_recipe": {
++      "kind": "excluded_null",
++      "count": 2
++    },
++    "expected_status_by_version": {
++      "1.32.0": "INVALID_TRANSFORMATION"
++    }
+   }
+ ]

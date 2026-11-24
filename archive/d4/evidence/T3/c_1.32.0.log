@@ -1,0 +1,11 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Scripts\python.exe run_c.py <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\snapshots\T3\c_cases.json <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\evidence\T3\c_1.32.0.json
+EXIT: 0
+STDOUT:
+{"count": 9, "statuses": ["PASS", "TRUE_VIOLATION", "PASS", "PASS", "PASS", "PASS", "INVALID_TRANSFORMATION", "PASS", "INVALID_TRANSFORMATION"]}
+
+STDERR:
+2026-11-14 12:59:59,110|[WARNING]|22540|20888|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:00:03,693|[WARNING]|22540|20888|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:00:04,231|[WARNING]|22540|20888|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:00:04,770|[WARNING]|22540|20888|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:00:05,327|[WARNING]|22540|20888|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.

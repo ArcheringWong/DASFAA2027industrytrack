@@ -1,0 +1,8 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Scripts\python.exe stateful_b.py <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\snapshots\base\b_cases.json <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\evidence\base\b_1.32.0.json --explore
+EXIT: 0
+STDOUT:
+{"deterministic": 7, "generated": 10, "statuses": ["PASS", "TRUE_VIOLATION", "PASS", "PASS", "PASS", "PASS", "INVALID_TRANSFORMATION"]}
+
+STDERR:
+2026-11-14 13:12:59,520|[WARNING]|20656|23208|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:13:00,090|[WARNING]|20656|23208|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.

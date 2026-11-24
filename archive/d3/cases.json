@@ -1,0 +1,663 @@
+[
+  {
+    "name": "confirmed_boundary_prefix",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    }
+  },
+  {
+    "name": "excluded_null_prefix",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  },
+  {
+    "name": "boundary_no_prefix",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": null,
+    "prefix_batches": []
+  },
+  {
+    "name": "boundary_same_page",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    },
+    "coalesce_prefix": true
+  },
+  {
+    "name": "boundary_no_remaining",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    }
+  },
+  {
+    "name": "arrow_no_prefix",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": null,
+    "prefix_batches": []
+  },
+  {
+    "name": "arrow_null_after_valid",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ],
+      [
+        {
+          "id": 1,
+          "ts": null
+        },
+        {
+          "id": 2,
+          "ts": null
+        }
+      ]
+    ],
+    "prefix_recipe": null,
+    "prefix_batches": []
+  },
+  {
+    "name": "arrow_null_inside_valid_batch",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 1,
+          "ts": null
+        },
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": null,
+    "prefix_batches": []
+  },
+  {
+    "name": "arrow_no_remaining",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  },
+  {
+    "name": "arrow_no_order",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": null,
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  },
+  {
+    "name": "boundary_upsert_set_only",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "merge",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    }
+  },
+  {
+    "name": "base_already_incomplete",
+    "versions": [
+      "1.31.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    }
+  },
+  {
+    "name": "invalid_new_prefix",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": null,
+    "prefix_batches": [
+      [
+        {
+          "id": 9,
+          "ts": 1
+        }
+      ]
+    ]
+  },
+  {
+    "name": "invalid_null_include",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "include",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  },
+  {
+    "name": "invalid_unstable_ties",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": false,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    }
+  },
+  {
+    "name": "invalid_dropped_original",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    },
+    "override_variant_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ]
+  },
+  {
+    "name": "invalid_changed_bound",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    },
+    "transformed_end_value": 4
+  },
+  {
+    "name": "invalid_changed_write",
+    "versions": [
+      "1.31.0",
+      "1.32.0"
+    ],
+    "format": "dict",
+    "row_order": "desc",
+    "end_value": null,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [
+      [
+        {
+          "id": 1,
+          "ts": 1
+        }
+      ]
+    ],
+    "base_batches": [
+      [
+        {
+          "id": 2,
+          "ts": 1
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "confirmed_boundary",
+      "count": 1
+    },
+    "transformed_write_disposition": "merge"
+  },
+  {
+    "name": "invalid_incomplete_source",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": false,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  },
+  {
+    "name": "invalid_mixed_format",
+    "versions": [
+      "1.32.0"
+    ],
+    "format": "mixed",
+    "row_order": "asc",
+    "end_value": 10,
+    "missing_policy": "exclude",
+    "range_start": "closed",
+    "write_disposition": "append",
+    "stable_ties": true,
+    "source_complete": true,
+    "prior_batches": [],
+    "base_batches": [
+      [
+        {
+          "id": 3,
+          "ts": 5
+        },
+        {
+          "id": 4,
+          "ts": 6
+        }
+      ]
+    ],
+    "prefix_recipe": {
+      "kind": "excluded_null",
+      "count": 2
+    }
+  }
+]

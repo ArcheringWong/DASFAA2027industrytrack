@@ -1,0 +1,9 @@
+snapshot,version,recorded_histories,recorded_pipeline_calls,scope
+base,1.31.0,10,20,final_saved_snapshot_only
+base,1.32.0,10,20,final_saved_snapshot_only
+T1,1.31.0,10,20,final_saved_snapshot_only
+T1,1.32.0,7,14,final_saved_snapshot_only
+T2,1.31.0,10,20,final_saved_snapshot_only
+T2,1.32.0,7,10,final_saved_snapshot_only
+T3,1.31.0,10,20,final_saved_snapshot_only
+T3,1.32.0,10,17,final_saved_snapshot_only

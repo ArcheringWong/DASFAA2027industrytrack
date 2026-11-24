@@ -1,0 +1,1837 @@
+{
+  "environment": {
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "dlt": "1.32.0",
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0"
+  },
+  "tests": [
+    {
+      "label": "T1–T3 default open",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3
+        ],
+        "target_ids": [
+          2,
+          3
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T2 explicit open",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "set_range_end",
+          "rows": [],
+          "format": null,
+          "value": "open"
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3
+        ],
+        "target_ids": [
+          2,
+          3
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T5 explicit closed",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "dict"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "set_range_end",
+          "rows": [],
+          "format": null,
+          "value": "closed"
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 1,
+              "cursor": -1,
+              "commit_step": 1
+            },
+            {
+              "id": 2,
+              "cursor": 0,
+              "commit_step": 2
+            },
+            {
+              "id": 3,
+              "cursor": 9,
+              "commit_step": 3
+            },
+            {
+              "id": 4,
+              "cursor": 10,
+              "commit_step": 4
+            },
+            {
+              "id": 5,
+              "cursor": 11,
+              "commit_step": 5
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        2,
+        3,
+        4
+      ],
+      "actual": {
+        "expected_ids": [
+          2,
+          3,
+          4
+        ],
+        "target_ids": [
+          2,
+          3,
+          4
+        ],
+        "target_rows": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            10
+          ]
+        ],
+        "requested_batches": [
+          1
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "closed"
+      },
+      "pass": true
+    },
+    {
+      "label": "T4 all-null then mixed Arrow; no order",
+      "input": [
+        {
+          "kind": "set_format",
+          "rows": [],
+          "format": null,
+          "value": "arrow"
+        },
+        {
+          "kind": "set_end_value",
+          "rows": [],
+          "format": null,
+          "value": 10
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 11,
+              "cursor": null,
+              "commit_step": 11
+            },
+            {
+              "id": 12,
+              "cursor": null,
+              "commit_step": 12
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "append_batch",
+          "rows": [
+            {
+              "id": 13,
+              "cursor": null,
+              "commit_step": 13
+            },
+            {
+              "id": 14,
+              "cursor": 9,
+              "commit_step": 14
+            },
+            {
+              "id": 15,
+              "cursor": 10,
+              "commit_step": 15
+            },
+            {
+              "id": 16,
+              "cursor": 11,
+              "commit_step": 16
+            }
+          ],
+          "format": null,
+          "value": null
+        },
+        {
+          "kind": "run_incremental_sync",
+          "rows": [],
+          "format": null,
+          "value": null
+        }
+      ],
+      "expected": [
+        14
+      ],
+      "actual": {
+        "expected_ids": [
+          14
+        ],
+        "target_ids": [
+          14
+        ],
+        "target_rows": [
+          [
+            14,
+            9
+          ]
+        ],
+        "requested_batches": [
+          1,
+          2
+        ],
+        "connector_error": null,
+        "missing_ids": [],
+        "range_end": "open"
+      },
+      "pass": true
+    },
+    {
+      "label": "T4 include null and exclude equality",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "include",
+        "base_batches": [
+          [
+            {
+              "id": 21,
+              "ts": null
+            },
+            {
+              "id": 22,
+              "ts": 9
+            },
+            {
+              "id": 23,
+              "ts": 10
+            }
+          ]
+        ]
+      },
+      "expected": [
+        21,
+        22
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [],
+          "new_ids": [
+            21,
+            22
+          ],
+          "final_ids": [
+            21,
+            22
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T4 include null and exclude equality",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_76a96eaa10f6",
+          "prior_batches": [],
+          "current_batches": [
+            [
+              {
+                "id": 21,
+                "ts": null
+              },
+              {
+                "id": 22,
+                "ts": 9
+              },
+              {
+                "id": 23,
+                "ts": 10
+              }
+            ]
+          ],
+          "prior_requested_batches": [],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [],
+          "target_rows": [
+            [
+              21,
+              null
+            ],
+            [
+              22,
+              9
+            ]
+          ],
+          "target_ids": [
+            21,
+            22
+          ],
+          "state_before": null,
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+              },
+              "_last_extracted_at": "2026-11-17 01:04:43.301210+00:00",
+              "_last_extracted_hash": "/Jm+Qcx/pbQek6x23iFKjkr5KxAh5kIJB1A44DGrdoM="
+            },
+            "schema_names": [
+              "d3_76a96eaa10f6"
+            ],
+            "dataset_name": "d3_76a96eaa10f6_dataset",
+            "default_schema_name": "d3_76a96eaa10f6",
+            "pipeline_name": "d3_76a96eaa10f6",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "/Jm+Qcx/pbQek6x23iFKjkr5KxAh5kIJB1A44DGrdoM="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T5 explicit closed with include null",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "include",
+        "base_batches": [
+          [
+            {
+              "id": 21,
+              "ts": null
+            },
+            {
+              "id": 22,
+              "ts": 9
+            },
+            {
+              "id": 23,
+              "ts": 10
+            }
+          ]
+        ],
+        "range_end": "closed"
+      },
+      "expected": [
+        21,
+        22,
+        23
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [],
+          "new_ids": [
+            21,
+            22,
+            23
+          ],
+          "final_ids": [
+            21,
+            22,
+            23
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T5 explicit closed with include null",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_eba7d408030d",
+          "prior_batches": [],
+          "current_batches": [
+            [
+              {
+                "id": 21,
+                "ts": null
+              },
+              {
+                "id": 22,
+                "ts": 9
+              },
+              {
+                "id": 23,
+                "ts": 10
+              }
+            ]
+          ],
+          "prior_requested_batches": [],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [],
+          "target_rows": [
+            [
+              21,
+              null
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ]
+          ],
+          "target_ids": [
+            21,
+            22,
+            23
+          ],
+          "state_before": null,
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+              },
+              "_last_extracted_at": "2026-11-17 01:04:44.208854+00:00",
+              "_last_extracted_hash": "Gz2gY50c0QTlA2F+FQM7J4W8x7qBB0y4RODX+by+AlI="
+            },
+            "schema_names": [
+              "d3_eba7d408030d"
+            ],
+            "dataset_name": "d3_eba7d408030d_dataset",
+            "default_schema_name": "d3_eba7d408030d",
+            "pipeline_name": "d3_eba7d408030d",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "Gz2gY50c0QTlA2F+FQM7J4W8x7qBB0y4RODX+by+AlI="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T2/T3 bounded prior does not move start",
+      "input": {
+        "format": "dict",
+        "row_order": null,
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "prior_batches": [
+          [
+            {
+              "id": 31,
+              "ts": 9
+            },
+            {
+              "id": 32,
+              "ts": 10
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 33,
+              "ts": 1
+            },
+            {
+              "id": 34,
+              "ts": 10
+            },
+            {
+              "id": 35,
+              "ts": 11
+            }
+          ]
+        ]
+      },
+      "expected": [
+        31,
+        33
+      ],
+      "actual": {
+        "oracle": {
+          "prior_ids": [
+            31
+          ],
+          "new_ids": [
+            33
+          ],
+          "final_ids": [
+            31,
+            33
+          ],
+          "model_checkpoint": 0
+        },
+        "product": {
+          "label": "T2/T3 bounded prior does not move start",
+          "dlt_version": "1.32.0",
+          "pipeline_name": "d3_71c284e6545c",
+          "prior_batches": [
+            [
+              {
+                "id": 31,
+                "ts": 9
+              },
+              {
+                "id": 32,
+                "ts": 10
+              }
+            ]
+          ],
+          "current_batches": [
+            [
+              {
+                "id": 33,
+                "ts": 1
+              },
+              {
+                "id": 34,
+                "ts": 10
+              },
+              {
+                "id": 35,
+                "ts": 11
+              }
+            ]
+          ],
+          "prior_requested_batches": [
+            1
+          ],
+          "requested_batches": [
+            1
+          ],
+          "prior_target_rows": [
+            [
+              31,
+              9
+            ]
+          ],
+          "target_rows": [
+            [
+              31,
+              9
+            ],
+            [
+              33,
+              1
+            ]
+          ],
+          "target_ids": [
+            31,
+            33
+          ],
+          "state_before": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+              },
+              "_last_extracted_at": "2026-11-17 01:04:45.084143+00:00",
+              "_last_extracted_hash": "Lio1z5QjfGRItkuBPzWB1x+nBJTWxwKDB5SMXY0xOgc="
+            },
+            "schema_names": [
+              "d3_71c284e6545c"
+            ],
+            "dataset_name": "d3_71c284e6545c_dataset",
+            "default_schema_name": "d3_71c284e6545c",
+            "pipeline_name": "d3_71c284e6545c",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "Lio1z5QjfGRItkuBPzWB1x+nBJTWxwKDB5SMXY0xOgc="
+          },
+          "state_after": {
+            "_state_version": 1,
+            "_state_engine_version": 4,
+            "_local": {
+              "first_run": false,
+              "_dev_mode": false,
+              "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+              "last_run_context": {
+                "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+              },
+              "_last_extracted_at": "2026-11-17 01:04:45.084143+00:00",
+              "_last_extracted_hash": "Lio1z5QjfGRItkuBPzWB1x+nBJTWxwKDB5SMXY0xOgc="
+            },
+            "schema_names": [
+              "d3_71c284e6545c"
+            ],
+            "dataset_name": "d3_71c284e6545c_dataset",
+            "default_schema_name": "d3_71c284e6545c",
+            "pipeline_name": "d3_71c284e6545c",
+            "destination_type": "dlt.destinations.duckdb",
+            "destination_name": null,
+            "_version_hash": "Lio1z5QjfGRItkuBPzWB1x+nBJTWxwKDB5SMXY0xOgc="
+          },
+          "error": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T6 confirmed_boundary_prefix on 1.32.0",
+      "input": {
+        "name": "confirmed_boundary_prefix",
+        "versions": [
+          "1.31.0",
+          "1.32.0"
+        ],
+        "format": "dict",
+        "row_order": "desc",
+        "end_value": null,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [
+          [
+            {
+              "id": 1,
+              "ts": 1
+            }
+          ]
+        ],
+        "base_batches": [
+          [
+            {
+              "id": 2,
+              "ts": 1
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "confirmed_boundary",
+          "count": 1
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_target_ids": [
+          1,
+          2
+        ],
+        "missing_ids": [],
+        "transformed_requests": [
+          1,
+          2
+        ],
+        "status": "PASS"
+      },
+      "actual": {
+        "eligible_ids": [
+          1,
+          2
+        ],
+        "transformed_oracle_ids": [
+          1,
+          2
+        ],
+        "base_target_ids": [
+          1,
+          2
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [
+          1,
+          2
+        ],
+        "missing_ids": [],
+        "transformed_requests": [
+          1,
+          2
+        ],
+        "status": "PASS",
+        "real_trace": {
+          "name": "confirmed_boundary_prefix",
+          "case": {
+            "name": "confirmed_boundary_prefix",
+            "versions": [
+              "1.31.0",
+              "1.32.0"
+            ],
+            "format": "dict",
+            "row_order": "desc",
+            "end_value": null,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "base_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "confirmed_boundary",
+              "count": 1
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "transformed_oracle": {
+              "prior_ids": [
+                1
+              ],
+              "new_ids": [
+                2
+              ],
+              "final_ids": [
+                1,
+                2
+              ],
+              "model_checkpoint": 1
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.32.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_5f6cd610baac",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:46.603475+00:00",
+                "_last_extracted_hash": "RWx3+Wja/SSMZad5B/IYS/PUZk1QazT0a5CpiddR954="
+              },
+              "schema_names": [
+                "d3_5f6cd610baac"
+              ],
+              "dataset_name": "d3_5f6cd610baac_dataset",
+              "default_schema_name": "d3_5f6cd610baac",
+              "pipeline_name": "d3_5f6cd610baac",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "RWx3+Wja/SSMZad5B/IYS/PUZk1QazT0a5CpiddR954=",
+              "sources": {
+                "d3_5f6cd610baac": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:47.319370+00:00",
+                "_last_extracted_hash": "rTfUGl4uo9Qi56skywoL6x472twC2iqIj8Poh34vS5g="
+              },
+              "schema_names": [
+                "d3_5f6cd610baac"
+              ],
+              "dataset_name": "d3_5f6cd610baac_dataset",
+              "default_schema_name": "d3_5f6cd610baac",
+              "pipeline_name": "d3_5f6cd610baac",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "rTfUGl4uo9Qi56skywoL6x472twC2iqIj8Poh34vS5g=",
+              "sources": {
+                "d3_5f6cd610baac": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_7be60dbcd08f",
+            "prior_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ]
+            ],
+            "current_batches": [
+              [
+                {
+                  "id": 1,
+                  "ts": 1
+                }
+              ],
+              [
+                {
+                  "id": 2,
+                  "ts": 1
+                }
+              ]
+            ],
+            "prior_requested_batches": [
+              1
+            ],
+            "requested_batches": [
+              1,
+              2
+            ],
+            "prior_target_rows": [
+              [
+                1,
+                1
+              ]
+            ],
+            "target_rows": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "target_ids": [
+              1,
+              2
+            ],
+            "state_before": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:48.072311+00:00",
+                "_last_extracted_hash": "DlxHO5Eq4HmbFi2BKaEfaEmFkleCOXDiJ9rFmGbLdOk="
+              },
+              "schema_names": [
+                "d3_7be60dbcd08f"
+              ],
+              "dataset_name": "d3_7be60dbcd08f_dataset",
+              "default_schema_name": "d3_7be60dbcd08f",
+              "pipeline_name": "d3_7be60dbcd08f",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "DlxHO5Eq4HmbFi2BKaEfaEmFkleCOXDiJ9rFmGbLdOk=",
+              "sources": {
+                "d3_7be60dbcd08f": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "669czW83KR00"
+                          ],
+                          "start_value": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "state_after": {
+              "_state_version": 2,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:48.806776+00:00",
+                "_last_extracted_hash": "0VmYGvN0wChqR+QOHZQfNfbT9vjI8TevZcVbTy+Qziw="
+              },
+              "schema_names": [
+                "d3_7be60dbcd08f"
+              ],
+              "dataset_name": "d3_7be60dbcd08f_dataset",
+              "default_schema_name": "d3_7be60dbcd08f",
+              "pipeline_name": "d3_7be60dbcd08f",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "0VmYGvN0wChqR+QOHZQfNfbT9vjI8TevZcVbTy+Qziw=",
+              "sources": {
+                "d3_7be60dbcd08f": {
+                  "resources": {
+                    "events": {
+                      "incremental": {
+                        "ts": {
+                          "initial_value": 0,
+                          "last_value": 1,
+                          "unique_hashes": [
+                            "Tp44cKMYfAuJ",
+                            "669czW83KR00"
+                          ],
+                          "start_value": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [],
+          "status": "PASS",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 2.990176
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "T6 excluded_null_prefix on 1.32.0",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        }
+      },
+      "expected": {
+        "eligible_ids": [
+          3,
+          4
+        ],
+        "transformed_target_ids": [],
+        "missing_ids": [
+          3,
+          4
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION"
+      },
+      "actual": {
+        "eligible_ids": [
+          3,
+          4
+        ],
+        "transformed_oracle_ids": [
+          3,
+          4
+        ],
+        "base_target_ids": [
+          3,
+          4
+        ],
+        "base_error": null,
+        "transformed_error": null,
+        "transformed_target_ids": [],
+        "missing_ids": [
+          3,
+          4
+        ],
+        "transformed_requests": [
+          1
+        ],
+        "status": "TRUE_VIOLATION",
+        "real_trace": {
+          "name": "excluded_null_prefix",
+          "case": {
+            "name": "excluded_null_prefix",
+            "versions": [
+              "1.32.0"
+            ],
+            "format": "arrow",
+            "row_order": "asc",
+            "end_value": 10,
+            "missing_policy": "exclude",
+            "range_start": "closed",
+            "write_disposition": "append",
+            "stable_ties": true,
+            "source_complete": true,
+            "prior_batches": [],
+            "base_batches": [
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prefix_recipe": {
+              "kind": "excluded_null",
+              "count": 2
+            }
+          },
+          "validation": {
+            "valid": true,
+            "reasons": [],
+            "generated_prefix_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ]
+            ],
+            "original_oracle": {
+              "prior_ids": [],
+              "new_ids": [
+                3,
+                4
+              ],
+              "final_ids": [
+                3,
+                4
+              ],
+              "model_checkpoint": 0
+            },
+            "transformed_oracle": {
+              "prior_ids": [],
+              "new_ids": [
+                3,
+                4
+              ],
+              "final_ids": [
+                3,
+                4
+              ],
+              "model_checkpoint": 0
+            },
+            "variant_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ],
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ]
+          },
+          "dlt_version": "1.32.0",
+          "base": {
+            "label": "base",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_075b9fcc7ff5",
+            "prior_batches": [],
+            "current_batches": [
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prior_requested_batches": [],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [],
+            "target_rows": [
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                6
+              ]
+            ],
+            "target_ids": [
+              3,
+              4
+            ],
+            "state_before": null,
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:49.599423+00:00",
+                "_last_extracted_hash": "LHzQi/s8rENxnS/9TRSFtDeucfzaslNywlYBz+N4HUU="
+              },
+              "schema_names": [
+                "d3_075b9fcc7ff5"
+              ],
+              "dataset_name": "d3_075b9fcc7ff5_dataset",
+              "default_schema_name": "d3_075b9fcc7ff5",
+              "pipeline_name": "d3_075b9fcc7ff5",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "LHzQi/s8rENxnS/9TRSFtDeucfzaslNywlYBz+N4HUU="
+            },
+            "error": null
+          },
+          "transformed": {
+            "label": "transformed",
+            "dlt_version": "1.32.0",
+            "pipeline_name": "d3_baceb960bfb0",
+            "prior_batches": [],
+            "current_batches": [
+              [
+                {
+                  "id": 5,
+                  "ts": null
+                },
+                {
+                  "id": 6,
+                  "ts": null
+                }
+              ],
+              [
+                {
+                  "id": 3,
+                  "ts": 5
+                },
+                {
+                  "id": 4,
+                  "ts": 6
+                }
+              ]
+            ],
+            "prior_requested_batches": [],
+            "requested_batches": [
+              1
+            ],
+            "prior_target_rows": [],
+            "target_rows": [],
+            "target_ids": [],
+            "state_before": null,
+            "state_after": {
+              "_state_version": 1,
+              "_state_engine_version": 4,
+              "_local": {
+                "first_run": false,
+                "_dev_mode": false,
+                "initial_cwd": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                "last_run_context": {
+                  "settings_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair\\.dlt",
+                  "local_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "run_dir": "<WORKSPACE>\\DASFAA2027_Industry_Revision\\oracle_repair",
+                  "uri": "file:///<WORKSPACE>/DASFAA2027_Industry_Revision/oracle_repair"
+                },
+                "_last_extracted_at": "2026-11-17 01:04:50.484873+00:00",
+                "_last_extracted_hash": "Bh8WV1cbKH1HqklFb/YH58JpMgVoaD/jW/rSjA9oICQ="
+              },
+              "schema_names": [
+                "d3_baceb960bfb0"
+              ],
+              "dataset_name": "d3_baceb960bfb0_dataset",
+              "default_schema_name": "d3_baceb960bfb0",
+              "pipeline_name": "d3_baceb960bfb0",
+              "destination_type": "dlt.destinations.duckdb",
+              "destination_name": null,
+              "_version_hash": "Bh8WV1cbKH1HqklFb/YH58JpMgVoaD/jW/rSjA9oICQ="
+            },
+            "error": null
+          },
+          "base_missing_ids": [],
+          "transformed_missing_ids": [
+            3,
+            4
+          ],
+          "status": "TRUE_VIOLATION",
+          "duplicate_output_claim": "not tested; target identity set only",
+          "elapsed_seconds": 1.782113
+        }
+      },
+      "pass": true
+    },
+    {
+      "label": "range-end change rejects a comparison before execution",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "exclude",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        },
+        "transformed_range_end": "closed"
+      },
+      "expected": "INVALID_TRANSFORMATION",
+      "actual": {
+        "name": "excluded_null_prefix",
+        "case": {
+          "name": "excluded_null_prefix",
+          "versions": [
+            "1.32.0"
+          ],
+          "format": "arrow",
+          "row_order": "asc",
+          "end_value": 10,
+          "missing_policy": "exclude",
+          "range_start": "closed",
+          "write_disposition": "append",
+          "stable_ties": true,
+          "source_complete": true,
+          "prior_batches": [],
+          "base_batches": [
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ],
+          "prefix_recipe": {
+            "kind": "excluded_null",
+            "count": 2
+          },
+          "transformed_range_end": "closed"
+        },
+        "validation": {
+          "valid": false,
+          "reasons": [
+            "read bounds changed"
+          ],
+          "generated_prefix_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ]
+          ],
+          "original_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "transformed_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "variant_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ],
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ]
+        },
+        "dlt_version": "1.32.0",
+        "base": null,
+        "transformed": null,
+        "status": "INVALID_TRANSFORMATION",
+        "elapsed_seconds": 0.000112
+      },
+      "pass": true
+    },
+    {
+      "label": "include policy does not make a null prefix neutral",
+      "input": {
+        "name": "excluded_null_prefix",
+        "versions": [
+          "1.32.0"
+        ],
+        "format": "arrow",
+        "row_order": "asc",
+        "end_value": 10,
+        "missing_policy": "include",
+        "range_start": "closed",
+        "write_disposition": "append",
+        "stable_ties": true,
+        "source_complete": true,
+        "prior_batches": [],
+        "base_batches": [
+          [
+            {
+              "id": 3,
+              "ts": 5
+            },
+            {
+              "id": 4,
+              "ts": 6
+            }
+          ]
+        ],
+        "prefix_recipe": {
+          "kind": "excluded_null",
+          "count": 2
+        }
+      },
+      "expected": "INVALID_TRANSFORMATION",
+      "actual": {
+        "name": "excluded_null_prefix",
+        "case": {
+          "name": "excluded_null_prefix",
+          "versions": [
+            "1.32.0"
+          ],
+          "format": "arrow",
+          "row_order": "asc",
+          "end_value": 10,
+          "missing_policy": "include",
+          "range_start": "closed",
+          "write_disposition": "append",
+          "stable_ties": true,
+          "source_complete": true,
+          "prior_batches": [],
+          "base_batches": [
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ],
+          "prefix_recipe": {
+            "kind": "excluded_null",
+            "count": 2
+          }
+        },
+        "validation": {
+          "valid": false,
+          "reasons": [
+            "prefix id 5 is not proven neutral",
+            "prefix id 6 is not proven neutral",
+            "expected eligible identities changed"
+          ],
+          "generated_prefix_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ]
+          ],
+          "original_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4
+            ],
+            "final_ids": [
+              3,
+              4
+            ],
+            "model_checkpoint": 0
+          },
+          "transformed_oracle": {
+            "prior_ids": [],
+            "new_ids": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "final_ids": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "model_checkpoint": 0
+          },
+          "variant_batches": [
+            [
+              {
+                "id": 5,
+                "ts": null
+              },
+              {
+                "id": 6,
+                "ts": null
+              }
+            ],
+            [
+              {
+                "id": 3,
+                "ts": 5
+              },
+              {
+                "id": 4,
+                "ts": 6
+              }
+            ]
+          ]
+        },
+        "dlt_version": "1.32.0",
+        "base": null,
+        "transformed": null,
+        "status": "INVALID_TRANSFORMATION",
+        "elapsed_seconds": 4.2e-05
+      },
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "tested": 11
+}

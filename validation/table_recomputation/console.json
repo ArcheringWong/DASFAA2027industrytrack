@@ -1,0 +1,38 @@
+{
+  "verified_archive_files": 136,
+  "table2_version_cases": 28,
+  "d3_pipeline_calls": 52,
+  "table3": [
+    {
+      "snapshot": "base",
+      "added_cases": 0,
+      "A": 17,
+      "B": 17,
+      "C": 34
+    },
+    {
+      "snapshot": "T1",
+      "added_cases": 3,
+      "A": 25,
+      "B": 25,
+      "C": 50
+    },
+    {
+      "snapshot": "T2",
+      "added_cases": 3,
+      "A": 19,
+      "B": 19,
+      "C": 38
+    },
+    {
+      "snapshot": "T3",
+      "added_cases": 2,
+      "A": 18,
+      "B": 18,
+      "C": 36
+    }
+  ],
+  "recorded_exploration_calls": 141,
+  "generated_layout_findings": 3,
+  "output": "<WORKSPACE>\\DASFAA2027_Industry_SubmissionReady\\artifact_minimal\\validation\\table_recomputation"
+}

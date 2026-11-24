@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="174" viewBox="0 0 460 174"><defs><marker id="arrow" markerWidth="6" markerHeight="5" refX="5.5" refY="2.5" orient="auto"><path d="M0 0 L6 2.5 L0 5 Z" fill="#40586a"/></marker></defs>
+<rect width="460" height="174" fill="#ffffff"/>
+<rect x="2" y="3" width="456" height="67" rx="5" fill="#f7f9fb" stroke="#647d8e" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="REFERENCE APPLICATION · integration design"><tspan x="10" y="16.00">REFERENCE APPLICATION · integration design</tspan></text>
+<rect x="9" y="23" width="100" height="40" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Entry source"><tspan x="59" y="35.00">Entry source</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="complete paginated feed"><tspan x="59" y="48.00">complete paginated</tspan> <tspan x="59" y="58.80">feed</tspan></text>
+<path d="M110 43 L121 43" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="123" y="23" width="100" height="40" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Cursor extraction"><tspan x="173" y="35.00">Cursor extraction</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="declared range and identity"><tspan x="173" y="48.00">declared range and</tspan> <tspan x="173" y="58.80">identity</tspan></text>
+<path d="M224 43 L235 43" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="237" y="23" width="100" height="40" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Reconciliation store"><tspan x="287" y="35.00">Reconciliation store</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="entry-level records"><tspan x="287" y="48.00">entry-level records</tspan></text>
+<path d="M338 43 L349 43" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="351" y="23" width="100" height="40" rx="5" fill="#ffffff" stroke="#647d8e" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Merchant matching"><tspan x="401" y="35.00">Merchant matching</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="exception investigation"><tspan x="401" y="48.00">exception</tspan> <tspan x="401" y="58.80">investigation</tspan></text>
+<rect x="2" y="76" width="456" height="67" rx="5" fill="#f1f8f9" stroke="#0d6871" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#172b3a" text-anchor="start" data-source-label="EXECUTED EXPERIMENT · local synthetic data"><tspan x="10" y="89.00">EXECUTED EXPERIMENT · local synthetic data</tspan></text>
+<rect x="9" y="96" width="100" height="40" rx="5" fill="#ffffff" stroke="#0d6871" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Source histories"><tspan x="59" y="108.00">Source histories</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="dictionary pages / Arrow"><tspan x="59" y="121.00">dictionary pages /</tspan> <tspan x="59" y="131.80">Arrow</tspan></text>
+<path d="M110 116 L121 116" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="123" y="96" width="100" height="40" rx="5" fill="#ffffff" stroke="#0d6871" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="Released dlt"><tspan x="173" y="108.00">Released dlt</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="1.29.0 / 1.31.0 / 1.32.0"><tspan x="173" y="121.00">1.29.0 / 1.31.0 / 1.32.0</tspan></text>
+<path d="M224 116 L235 116" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="237" y="96" width="100" height="40" rx="5" fill="#ffffff" stroke="#0d6871" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="DuckDB target"><tspan x="287" y="108.00">DuckDB target</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="observed integer IDs"><tspan x="287" y="121.00">observed integer IDs</tspan></text>
+<path d="M338 116 L349 116" fill="none" stroke="#40586a" stroke-width="1.15" marker-end="url(#arrow)"/>
+<rect x="351" y="96" width="100" height="40" rx="5" fill="#ffffff" stroke="#0d6871" stroke-width="1.1"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.8" font-weight="700" fill="#172b3a" text-anchor="middle" data-source-label="ID comparison"><tspan x="401" y="108.00">ID comparison</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="expected vs. observed"><tspan x="401" y="121.00">expected vs.</tspan> <tspan x="401" y="131.80">observed</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#425868" text-anchor="middle" data-source-label="Expected IDs are computed from the complete source history and range contract, independently of dlt state."><tspan x="230.0" y="158.00">Expected IDs are computed from the complete source history and range contract, independently of dlt</tspan> <tspan x="230.0" y="168.80">state.</tspan></text>
+</svg>

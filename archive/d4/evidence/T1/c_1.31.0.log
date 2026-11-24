@@ -1,0 +1,6 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_131\Scripts\python.exe run_c.py <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\snapshots\T1\c_cases.json <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\evidence\T1\c_1.31.0.json
+EXIT: 0
+STDOUT:
+{"count": 7, "statuses": ["TRUE_VIOLATION", "PASS", "PASS", "INCONCLUSIVE", "TRUE_VIOLATION", "PASS", "INVALID_TRANSFORMATION"]}
+
+STDERR:

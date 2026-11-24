@@ -1,0 +1,227 @@
+{
+  "diffs": {
+    "T1": {
+      "a": {
+        "added_physical_lines": 132,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      },
+      "b": {
+        "added_physical_lines": 132,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      },
+      "c": {
+        "added_physical_lines": 134,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      }
+    },
+    "T2": {
+      "a": {
+        "added_physical_lines": 105,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      },
+      "b": {
+        "added_physical_lines": 105,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      },
+      "c": {
+        "added_physical_lines": 103,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 3
+      }
+    },
+    "T3": {
+      "a": {
+        "added_physical_lines": 71,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 2
+      },
+      "b": {
+        "added_physical_lines": 71,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 2
+      },
+      "c": {
+        "added_physical_lines": 68,
+        "deleted_physical_lines": 0,
+        "changed_case_file_count": 1,
+        "changed_code_file_count": 0,
+        "added_cases": 2
+      }
+    }
+  },
+  "calls": {
+    "base": [
+      {
+        "scheme": "a",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.31.0",
+        "fixed": 16,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "a",
+        "version": "1.32.0",
+        "fixed": 9,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.32.0",
+        "fixed": 18,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "b",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 20
+      },
+      {
+        "scheme": "b",
+        "version": "1.32.0",
+        "fixed": 9,
+        "extra_stateful": 20
+      }
+    ],
+    "T1": [
+      {
+        "scheme": "a",
+        "version": "1.31.0",
+        "fixed": 12,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.31.0",
+        "fixed": 24,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "a",
+        "version": "1.32.0",
+        "fixed": 13,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.32.0",
+        "fixed": 26,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "b",
+        "version": "1.31.0",
+        "fixed": 12,
+        "extra_stateful": 20
+      },
+      {
+        "scheme": "b",
+        "version": "1.32.0",
+        "fixed": 13,
+        "extra_stateful": 14
+      }
+    ],
+    "T2": [
+      {
+        "scheme": "a",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.31.0",
+        "fixed": 16,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "a",
+        "version": "1.32.0",
+        "fixed": 11,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.32.0",
+        "fixed": 22,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "b",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 20
+      },
+      {
+        "scheme": "b",
+        "version": "1.32.0",
+        "fixed": 11,
+        "extra_stateful": 10
+      }
+    ],
+    "T3": [
+      {
+        "scheme": "a",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.31.0",
+        "fixed": 16,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "a",
+        "version": "1.32.0",
+        "fixed": 10,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "c",
+        "version": "1.32.0",
+        "fixed": 20,
+        "extra_stateful": 0
+      },
+      {
+        "scheme": "b",
+        "version": "1.31.0",
+        "fixed": 8,
+        "extra_stateful": 20
+      },
+      {
+        "scheme": "b",
+        "version": "1.32.0",
+        "fixed": 10,
+        "extra_stateful": 17
+      }
+    ]
+  }
+}

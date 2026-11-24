@@ -1,0 +1,37 @@
+COMMAND: <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Scripts\python.exe stateful_b.py <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\snapshots\T1\b_cases.json <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\evidence\T1\b_1.32.0.json --explore
+EXIT: 1
+STDOUT:
+
+STDERR:
+2026-11-14 13:08:12,708|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:13,274|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:18,188|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:18,696|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:19,256|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:20,392|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:22,189|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:23,961|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+2026-11-14 13:08:25,759|[WARNING]|17468|19948|dlt|extractors.py|_compute_tables:561|In resource: events, when merging arrow schema with dlt schema, several column hints were different. dlt schema hints were kept and arrow schema and data were unmodified. It is up to destination to coerce the differences when loading. Change log level to INFO for more details.
+Traceback (most recent call last):
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\stateful_b.py", line 86, in <module>
+    main()
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\stateful_b.py", line 77, in main
+    run_state_machine_as_test(ExtractionMachine, settings=settings(
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Lib\site-packages\hypothesis\stateful.py", line 308, in run_state_machine_as_test
+    state_machine_test()
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Lib\site-packages\hypothesis\stateful.py", line 154, in run_state_machine
+    @given(st.data())
+               ^^^
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Lib\site-packages\hypothesis\core.py", line 2334, in wrapped_test
+    raise the_error_hypothesis_found
+  File "<WORKSPACE>\D_checkpoint_safety\D4_engineering_value\.venv_132\Lib\site-packages\hypothesis\stateful.py", line 1324, in do_draw
+    raise InvalidDefinition(msg) from None
+hypothesis.errors.InvalidDefinition: No progress can be made from state ExtractionMachine({}), because no available rule had a True precondition. rules: coalesce_first_batches, drop_excluded_null_prefix, split_last_batch
+Failing test case: <state machine>
+state = ExtractionMachine()
+state.choose(index=6)
+state.evaluate()
+state.teardown()
+Explanation:
+    These lines were always and only run by failing test cases:
+        <WORKSPACE>\D_checkpoint_safety\D4_engineering_value\stateful_b.py:52
