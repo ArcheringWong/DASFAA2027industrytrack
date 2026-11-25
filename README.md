@@ -51,6 +51,26 @@ Run `python -B recompute_table1.py --output recomputed-table1` to independently 
 
 Saved B exploration adds 40/34/30/37 product calls in the four independent snapshots. Counts cover the final retained executions, including prior-state setup. Earlier overwritten development runs prevent reconstruction of lifetime totals. At least three generated histories have visible saved-layout inconsistencies caused by later in-place mutation of the batch list. Other mutations cannot be ruled out solely from request indices. Fixed-history checks pass. `recomputed.json` identifies the affected records and scope limitations.
 
+## Shrinking counts and protocol deviations
+
+These are archived results, not new experiments. The path-redacted summaries retain all counters, operations, inputs and outputs; only local directory metadata is replaced. Original and publication SHA-256 hashes and the modified JSON Pointers are recorded in [supplement-provenance-20261125.json](supplement-provenance-20261125.json).
+
+| Archived shrinking run | Status | Observed scenario executions (`total_real_runs`) | Best witness operations | Budget (`budget`) |
+|---|---|---:|---:|---:|
+| [Dictionary boundary](archive/support/shrink_d1_summary.json) | `hypothesis_completed` | 5 | 4 | 30 |
+| [All-null Arrow batch](archive/support/shrink_generic_summary.json) | `budget_exhausted_best_observed` | 29 | 7 | 30 |
+
+The Dictionary result is one completed automatic shrinking run with five scenario executions, not five independently shrunk cases. It is separate from the earlier manually reduced witness. For Arrow, 29 is the observed execution count, not the budget; the best verified witness has seven operations and automatic shrinking did not finish. Scenario executions are not `pipeline.run()` call counts. These summaries provide evidence for the reported units; they do not rerun the full D1/D2 generation studies or establish a minimal Arrow witness.
+
+The relevant maintenance-study records are:
+
+- [Frozen D4 protocol](archive/d4/D4_EXPERIMENT_PROTOCOL.md), line 7: the original cap was eight scenarios per scheme and version.
+- [D4 evidence audit](archive/d4/D4_EVIDENCE_AUDIT.md), line 15: the final 1.32.0 suites retained ten fixed cases for T1/T2 and nine for T3. The cap was not enforced. Calls are charged as actually recorded; the comparison is not a strict equal-budget contest.
+- [D4 evidence audit](archive/d4/D4_EVIDENCE_AUDIT.md), line 13: the initial stateful baseline selected only the first six cases. Its revisions expanded case selection, added unconditional reselection, limited retained evaluations, and prioritized the newly added cases. The final baseline was rerun; overwritten or failed earlier attempts do not count as independent samples.
+- [Pre-revision state machine](archive/d4/evidence/development_pre_fix_stateful_b.py) and [saved framework failure](archive/d4/evidence/development_B_T1_132_invalid_definition.log) retain the implementation history.
+
+The audit also documents shared input preparation through the paired-input validator and the finite scope of the stateful baseline. The final-snapshot call counts do not establish total development cost, independent preparation effort, or a maintenance advantage. Replay limitations for mutable generated batch histories remain as described above and under Resources and coverage.
+
 ## Contents and provenance
 
 - `archive/` contains selected D3/D4 source, fixtures, per-case outputs, manifests, and protocols. Local path metadata has been replaced by neutral placeholders in review copies. `archive/provenance.json` retains both the original and review-file hashes. Frozen historical source retains its original inclusive-end predicate. Use the repaired `code/` for the new Oracle executions.

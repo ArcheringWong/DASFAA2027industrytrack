@@ -812,8 +812,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9081,
-      "sha256": "d312be55bdf498ed4d6361a683ad8c49fe06ca27d4e9dab610e4826dc4537d13"
+      "bytes": 11804,
+      "sha256": "1c7ef73d768f5eb153bcde6854e7515eab06dca8f7b05d4800add2d270a172c2"
     },
     {
       "path": "rebuild_figures.py",
@@ -944,6 +944,21 @@
       "path": "verify_artifact.py",
       "bytes": 2136,
       "sha256": "3476edb331aecaf117e74be51688c01d98fb210bacf5d3483018b2ab7aaf9afc"
+    },
+    {
+      "path": "archive/support/shrink_d1_summary.json",
+      "bytes": 6935,
+      "sha256": "6c8f1e5b63f4f4c892d21fec2e73ef00be43119a66cd9c15006a6eef54524283"
+    },
+    {
+      "path": "archive/support/shrink_generic_summary.json",
+      "bytes": 4909,
+      "sha256": "22ca135e30e13633f2fbfb261184c9eb66f6b0b6497dd5ea9f2119e9ec0c6167"
+    },
+    {
+      "path": "supplement-provenance-20261125.json",
+      "bytes": 3884,
+      "sha256": "9b942a32794953ec8bf02f7ee6d3686693d8288f50605699773eb9822d2d545e"
     }
   ]
 }

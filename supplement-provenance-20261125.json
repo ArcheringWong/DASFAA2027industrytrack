@@ -1,0 +1,96 @@
+{
+  "parent_public_commit": "336d5f5f3487fffe9fe803ab9dc8b3673ae5bb35",
+  "scope": "Documentation and two archived shrinking summaries only",
+  "original_frozen_files_modified": false,
+  "new_product_or_llm_execution": false,
+  "pre_existing_scientific_files_byte_identical": true,
+  "summaries": [
+    {
+      "source": "D2_cross_mechanism/evidence/shrink_d1_summary.json",
+      "source_sha256": "e7b5445f404a0977fd2e47d00c3c1c3dc2e807ac4ab1cabca8171d07099f4809",
+      "package_path": "archive/support/shrink_d1_summary.json",
+      "publication_sha256": "6c8f1e5b63f4f4c892d21fec2e73ef00be43119a66cd9c15006a6eef54524283",
+      "path_metadata_redactions": [
+        {
+          "json_pointer": "/best_result/trace/1/dlt_state/_local/initial_cwd",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/1/dlt_state/_local/last_run_context/settings_dir",
+          "replacement": "<LOCAL_RUN_DIR>/.dlt"
+        },
+        {
+          "json_pointer": "/best_result/trace/1/dlt_state/_local/last_run_context/local_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/1/dlt_state/_local/last_run_context/run_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/1/dlt_state/_local/last_run_context/uri",
+          "replacement": "file:///<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/3/dlt_state/_local/initial_cwd",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/3/dlt_state/_local/last_run_context/settings_dir",
+          "replacement": "<LOCAL_RUN_DIR>/.dlt"
+        },
+        {
+          "json_pointer": "/best_result/trace/3/dlt_state/_local/last_run_context/local_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/3/dlt_state/_local/last_run_context/run_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/trace/3/dlt_state/_local/last_run_context/uri",
+          "replacement": "file:///<LOCAL_RUN_DIR>"
+        }
+      ],
+      "all_other_json_values_unchanged": true,
+      "total_scenario_executions": 5,
+      "best_witness_operations": 4,
+      "status": "hypothesis_completed",
+      "budget": 30
+    },
+    {
+      "source": "D2_cross_mechanism/evidence/shrink_generic_summary.json",
+      "source_sha256": "e2ee85a7c30743cedebb18a9fd1fe10ca126ff031527f21dd1bf9858cf925a6a",
+      "package_path": "archive/support/shrink_generic_summary.json",
+      "publication_sha256": "22ca135e30e13633f2fbfb261184c9eb66f6b0b6497dd5ea9f2119e9ec0c6167",
+      "path_metadata_redactions": [
+        {
+          "json_pointer": "/best_result/dlt_state/_local/initial_cwd",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/dlt_state/_local/last_run_context/settings_dir",
+          "replacement": "<LOCAL_RUN_DIR>/.dlt"
+        },
+        {
+          "json_pointer": "/best_result/dlt_state/_local/last_run_context/local_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/dlt_state/_local/last_run_context/run_dir",
+          "replacement": "<LOCAL_RUN_DIR>"
+        },
+        {
+          "json_pointer": "/best_result/dlt_state/_local/last_run_context/uri",
+          "replacement": "file:///<LOCAL_RUN_DIR>"
+        }
+      ],
+      "all_other_json_values_unchanged": true,
+      "total_scenario_executions": 29,
+      "best_witness_operations": 7,
+      "status": "budget_exhausted_best_observed",
+      "budget": 30
+    }
+  ],
+  "redaction_policy": "Only absolute local directory/URI values under dlt_state/_local; no counters, operations or results altered."
+}

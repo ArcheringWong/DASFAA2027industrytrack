@@ -1,0 +1,238 @@
+{
+  "status": "budget_exhausted_best_observed",
+  "budget": 30,
+  "hypothesis_real_runs": 28,
+  "extra_original_and_final_validations": 1,
+  "total_real_runs": 29,
+  "best_ops": [
+    {
+      "kind": "set_format",
+      "rows": [],
+      "format": null,
+      "value": "arrow"
+    },
+    {
+      "kind": "set_row_order",
+      "rows": [],
+      "format": null,
+      "value": "asc"
+    },
+    {
+      "kind": "set_end_value",
+      "rows": [],
+      "format": null,
+      "value": 10
+    },
+    {
+      "kind": "append_batch",
+      "rows": [
+        {
+          "id": 1,
+          "cursor": null,
+          "commit_step": 1
+        },
+        {
+          "id": 2,
+          "cursor": null,
+          "commit_step": 2
+        }
+      ],
+      "format": null,
+      "value": null
+    },
+    {
+      "kind": "append_batch",
+      "rows": [
+        {
+          "id": 9,
+          "cursor": null,
+          "commit_step": 9
+        }
+      ],
+      "format": null,
+      "value": null
+    },
+    {
+      "kind": "append_batch",
+      "rows": [
+        {
+          "id": 3,
+          "cursor": 8,
+          "commit_step": 3
+        },
+        {
+          "id": 4,
+          "cursor": 9,
+          "commit_step": 4
+        }
+      ],
+      "format": null,
+      "value": null
+    },
+    {
+      "kind": "run_incremental_sync",
+      "rows": [],
+      "format": null,
+      "value": null
+    }
+  ],
+  "best_result": {
+    "label": "shrink_original_validation",
+    "dlt_version": "1.29.0",
+    "duckdb_version": "1.5.6",
+    "pyarrow_version": "26.0.0",
+    "python": "3.11.4 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 13:38:37) [MSC v.1916 64 bit (AMD64)]",
+    "ops": [
+      {
+        "kind": "set_format",
+        "rows": [],
+        "format": null,
+        "value": "arrow"
+      },
+      {
+        "kind": "set_row_order",
+        "rows": [],
+        "format": null,
+        "value": "asc"
+      },
+      {
+        "kind": "set_end_value",
+        "rows": [],
+        "format": null,
+        "value": 10
+      },
+      {
+        "kind": "append_batch",
+        "rows": [
+          {
+            "id": 1,
+            "cursor": null,
+            "commit_step": 1
+          },
+          {
+            "id": 2,
+            "cursor": null,
+            "commit_step": 2
+          }
+        ],
+        "format": null,
+        "value": null
+      },
+      {
+        "kind": "append_batch",
+        "rows": [
+          {
+            "id": 9,
+            "cursor": null,
+            "commit_step": 9
+          }
+        ],
+        "format": null,
+        "value": null
+      },
+      {
+        "kind": "append_batch",
+        "rows": [
+          {
+            "id": 3,
+            "cursor": 8,
+            "commit_step": 3
+          },
+          {
+            "id": 4,
+            "cursor": 9,
+            "commit_step": 4
+          }
+        ],
+        "format": null,
+        "value": null
+      },
+      {
+        "kind": "run_incremental_sync",
+        "rows": [],
+        "format": null,
+        "value": null
+      }
+    ],
+    "batches": [
+      [
+        {
+          "id": 1,
+          "cursor": null,
+          "commit_step": 1
+        },
+        {
+          "id": 2,
+          "cursor": null,
+          "commit_step": 2
+        }
+      ],
+      [
+        {
+          "id": 9,
+          "cursor": null,
+          "commit_step": 9
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "cursor": 8,
+          "commit_step": 3
+        },
+        {
+          "id": 4,
+          "cursor": 9,
+          "commit_step": 4
+        }
+      ]
+    ],
+    "format": "arrow",
+    "row_order": "asc",
+    "end_value": 10,
+    "expected_ids": [
+      3,
+      4
+    ],
+    "requested_batches": [
+      1
+    ],
+    "target_rows": [],
+    "target_ids": [],
+    "target_table_exists": false,
+    "dlt_state": {
+      "_state_version": 1,
+      "_state_engine_version": 4,
+      "_local": {
+        "first_run": false,
+        "_dev_mode": false,
+        "initial_cwd": "<LOCAL_RUN_DIR>",
+        "last_run_context": {
+          "settings_dir": "<LOCAL_RUN_DIR>/.dlt",
+          "local_dir": "<LOCAL_RUN_DIR>",
+          "run_dir": "<LOCAL_RUN_DIR>",
+          "uri": "file:///<LOCAL_RUN_DIR>"
+        },
+        "_last_extracted_at": "2026-11-14 01:09:00.854102+00:00",
+        "_last_extracted_hash": "WUvSCm34xmagunZAivDR0tm8nk+UT7fB5+km1hBNNt8="
+      },
+      "schema_names": [
+        "d2_ffcc1837e534"
+      ],
+      "default_schema_name": "d2_ffcc1837e534",
+      "pipeline_name": "d2_ffcc1837e534",
+      "dataset_name": "d2_ffcc1837e534_dataset",
+      "destination_type": "dlt.destinations.duckdb",
+      "destination_name": null,
+      "_version_hash": "WUvSCm34xmagunZAivDR0tm8nk+UT7fB5+km1hBNNt8="
+    },
+    "connector_error": null,
+    "pipeline_name": "d2_ffcc1837e534",
+    "missing_ids": [
+      3,
+      4
+    ],
+    "failure_type": "record_omission",
+    "elapsed_seconds": 0.736751
+  }
+}
